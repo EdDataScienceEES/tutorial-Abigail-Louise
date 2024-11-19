@@ -1,14 +1,24 @@
 <center><img src="{{ site.baseurl }}/tutheaderbl.png" alt="Img"></center>
 
+# ANOVA and Tukey's Test Tutorial
+
 To add images, replace `tutheaderbl1.png` with the file name of any image you upload to your GitHub repository.
 
 ### Tutorial Aims
 
-#### <a href="#section1"> 1. The first section</a>
+#### <a href="#section1 "> 1) What is ANOVA?</a>
 
-#### <a href="#section2"> 2. The second section</a>
+#### <a href="#section2"> 2) The second section</a>
 
-#### <a href="#section3"> 3. The third section</a>
+#### <a href="#section3"> 3) The third section</a>
+
+#### <a href="#section4"> 4) The third section</a>
+
+#### <a href="#section5"> 5) The third section</a>
+
+#### <a href="#section6"> 6) The third section</a>
+
+#### <a href="#section7"> 7) The third section</a>
 
 You can read this text, then delete it and replace it with your text about your tutorial: what are the aims, what code do you need to achieve them?
 ---------------------------
@@ -16,7 +26,6 @@ We are using `<a href="#section_number">text</a>` to create anchors within our t
 
 To create subheadings, you can use `#`, e.g. `# Subheading 1` creates a subheading with a large font size. The more hashtags you add, the smaller the text becomes. If you want to make text bold, you can surround it with `__text__`, which creates __text__. For italics, use only one understore around the text, e.g. `_text_`, _text_.
 
-# Subheading 1
 ## Subheading 2
 ### Subheading 3
 
@@ -26,7 +35,7 @@ You can get all of the resources for this tutorial from <a href="https://github.
 
 <a name="section1"></a>
 
-## 1. The first section
+## 1) What is ANOVA?
 
 
 At the beginning of your tutorial you can ask people to open `RStudio`, create a new script by clicking on `File/ New File/ R Script` set the working directory and load some packages, for example `ggplot2` and `dplyr`. You can surround package names, functions, actions ("File/ New...") and small chunks of code with backticks, which defines them as inline code blocks and makes them stand out among the text, e.g. `ggplot2`.
