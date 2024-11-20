@@ -6,19 +6,19 @@
 
 ### Tutorial Aims
 
-#### <a href="#section1 "> 1) What is ANOVA?</a>
+#### <a href="#section1 "> 1) What is ANOVA and Tukey's Test?</a>
 
-#### <a href="#section2"> 2) The second section</a>
+#### <a href="#section2"> 2) Research question and hypothesis</a>
 
-#### <a href="#section3"> 3) The third section</a>
+#### <a href="#section3"> 3) Data manipulation</a>
 
-#### <a href="#section4"> 4) The fourth section</a>
+#### <a href="#section4"> 4) Data visualisation</a>
 
-#### <a href="#section5"> 5) The fifth section</a>
+#### <a href="#section5"> 5) Running a one-way ANOVA</a>
 
-#### <a href="#section6"> 6) The sixth section</a>
+#### <a href="#section6"> 6) Running Tukey's HSD</a>
 
-#### <a href="#section7"> 7) The sevenith section</a>
+#### <a href="#section7"> 7) Communicating model results</a>
 
 You can read this text, then delete it and replace it with your text about your tutorial: what are the aims, what code do you need to achieve them?
 ---------------------------
@@ -35,7 +35,7 @@ You can get all of the resources for this tutorial from <a href="https://github.
 
 <a name="section1"></a>
 
-## 1) What is ANOVA?
+## 1) What is ANOVA and Tukey's Test?
 
 
 At the beginning of your tutorial you can ask people to open `RStudio`, create a new script by clicking on `File/ New File/ R Script` set the working directory and load some packages, for example `ggplot2` and `dplyr`. You can surround package names, functions, actions ("File/ New...") and small chunks of code with backticks, which defines them as inline code blocks and makes them stand out among the text, e.g. `ggplot2`.
@@ -55,7 +55,7 @@ library(dplyr)
 
 <a name="section2"></a>
 
-## 2. The second section
+## 2. Research question and hypothesis
 
 You can add more text and code, e.g.
 
@@ -87,7 +87,25 @@ At this point it would be a good idea to include an image of what the plot is me
 
 <a name="section3"></a>
 
-## 3. The third section
+## 3) Data manipulation
+
+<a name="section4"></a>
+
+## 4) Data visualisation
+
+It is good practice to visualise your data before undertaking any data analysis.
+
+<a name="section5"></a>
+
+## 5) Running a one-way ANOVA
+
+<a name="section6"></a>
+
+## 6) Running Tukey's HSD
+
+<a name="section7"></a>
+
+## 7) Communicating model results
 
 More text, code and images.
 
