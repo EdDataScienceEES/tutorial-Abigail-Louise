@@ -12,13 +12,13 @@ To add images, replace `tutheaderbl1.png` with the file name of any image you up
 
 #### <a href="#section3"> 3) The third section</a>
 
-#### <a href="#section4"> 4) The third section</a>
+#### <a href="#section4"> 4) The fourth section</a>
 
-#### <a href="#section5"> 5) The third section</a>
+#### <a href="#section5"> 5) The fifth section</a>
 
-#### <a href="#section6"> 6) The third section</a>
+#### <a href="#section6"> 6) The sixth section</a>
 
-#### <a href="#section7"> 7) The third section</a>
+#### <a href="#section7"> 7) The sevenith section</a>
 
 You can read this text, then delete it and replace it with your text about your tutorial: what are the aims, what code do you need to achieve them?
 ---------------------------
