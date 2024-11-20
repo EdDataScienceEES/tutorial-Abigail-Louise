@@ -54,6 +54,15 @@ sparrow_anova <- aov(Abundance ~ Habitat, data = sparrow_long)
 
 summary(sparrow_anova)
 
+# Checking assumptions:
+
+# Is the data normally distributed?
+# This can be checked by plotting a histogram of the residuals and a normal Q-Q plot
+hist(sparrow_anova$residuals)  # Plotting histogram of residuals
+plot(sparrow_anova, which = 2) # Plotting Q-Q plot
+
+# Checking for homoscedasticity
+plot(sparrow_anova, which = 1)
 
 # 6) Running Tukey's HSD ----
 
