@@ -2,7 +2,7 @@
 
 # ANOVA and Tukey's Test Tutorial
 
-To add images, replace `tutheaderbl1.png` with the file name of any image you upload to your GitHub repository.
+ To add images, replace `tutheaderbl1.png` with the file name of any image you upload to your GitHub repository.
 
 ### Tutorial Aims
 
@@ -85,7 +85,7 @@ At this point it would be a good idea to include an image of what the plot is me
 
 <center> <img src="{{ site.baseurl }}/IMAGE_NAME.png" alt="Img" style="width: 800px;"/> </center>
 
-<a name="section1"></a>
+<a name="section3"></a>
 
 ## 3. The third section
 
