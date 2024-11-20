@@ -25,7 +25,7 @@ getwd()
 
 # Load packages
 library(tidyverse)
-
+library(broom)
 
 # Import data
 sparrow <- read_csv("data/sparrow_data.csv")
@@ -50,28 +50,45 @@ str(sparrow_long)
 
 # 5) Running a one-way ANOVA ----
 
+# Running a one-way ANOVA of abundance against habitat
 sparrow_anova <- aov(Abundance ~ Habitat, data = sparrow_long)
 
+# Printing summary output
 summary(sparrow_anova)
 
 # Checking assumptions:
 
-# Is the data normally distributed?
-# This can be checked by plotting a histogram of the residuals and a normal Q-Q plot
-hist(sparrow_anova$residuals)  # Plotting histogram of residuals
+# Normal distribution of residuals - this can be checked by plotting a histogram of the residuals and a normal Q-Q plot
+
+hist(sparrow_anova$residuals, breaks = 30)  # Plotting histogram of residuals and increasing intervals to get a better visualisation
+# The residuals do not look normally distributed
+
 plot(sparrow_anova, which = 2) # Plotting Q-Q plot
+# There are heavy tails present which suggests the data has a skewed distribution 
+# Or the outliers do not follow a normal distribution (by looking at the histogram it appears to be the this)
+
 
 # Checking for homoscedasticity
 plot(sparrow_anova, which = 1)
+# The red line is flat against grey dashed line which is what we want to see
+
 
 # 6) Running Tukey's HSD ----
 
-# Post-Hoc Test - Tukey's Test
+# Running Tukey's HSD post-hoc test on the anova output and setting the confidence level to 95%
+(sparrow_test <- TukeyHSD(sparrow_anova, conf.level=.95))
 
-sparrow_test <- TukeyHSD(sparrow_anova, conf.level=.95)
+# To convert results into a better presented format of the summary table you can use the broom package
+(tukey_results <- broom::tidy(sparrow_test)) # Creating tidy data frame using broom
 
 # Plotting Tukey's test result
 plot(sparrow_test)
+
+
+
+# Convert Tukey's test results to a tidy data frame
+tukey_results <- broom::tidy(sparrow_test)
+
 
 
 # 7) Communicating model results ----
@@ -95,5 +112,19 @@ sparrow_summary <- sparrow_long %>%
   labs(x = "\n Habitat", y = "Average Abundance \n") +                 # Adding axis titles (\n leaves a space between plot and title)
   theme_test() +                                                       # Changing theme
   theme(legend.position = "none"))                                     # Removing legend
+
+
+# Improve Tukey's test result plot
+(sparrow_tukey_plot <- ggplot(tukey_results, 
+                              aes(x = contrast, y = estimate)) +    # Set x axis to pairwise comparisons and y to mean differences
+  geom_point(color = "black", size = 2) +                           # Add points for mean differences and increase size
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high),             # Add error bars showing confidence intervals
+                width = 0.2, color = "black") +                     # Add error bars for confidence intervals
+  geom_hline(yintercept = 0, linetype = "dashed", color = "blue") + # Add a reference line at 0 and highlight with blue colour
+  coord_flip() +                                                    # Flip coordinates for horizontal orientation
+  labs(x = "Pairwise Comparisons", y = "Mean Difference",           # Add informative axis titles
+       title = "Tukey HSD Test with 95% confidence level") +        # Add plot title
+  theme_minimal(base_size = 12))                                    # Apply a clean theme
+
 
 
