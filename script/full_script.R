@@ -76,5 +76,24 @@ plot(sparrow_test)
 
 # 7) Communicating model results ----
 
+# Creating summary table of key statistics 
+sparrow_summary <- sparrow_long %>%
+  group_by(Habitat) %>%                          # Grouping the abundance data by habitat
+  summarise(n = n(),                             # "n" is the number of observations
+            average_abundance = mean(Abundance), # Average abundance of each habitat
+            SD = sd(Abundance)) %>%              # Standard deviation of abundance in each habitat
+  mutate(SE = SD/sqrt(n))                        # Standard error of abundance in each habitat
+
+# Creating bar plot of sparrow summary
+(sparrow_barplot <- ggplot(data = sparrow_summary) +
+  geom_bar(aes(x = Habitat, y = average_abundance, fill = Habitat),    # Creating bar plot with habitat on the x axis and average abundance on the y
+           stat = "identity", colour = "black") +                      # Setting stat to identity uses average_abundance instead of count and adding black borders to bars
+  geom_errorbar(aes(x = Habitat, ymin = average_abundance - SE,        # Adding error bars to represent standard error
+                ymax = average_abundance + SE), width = 0.25,          # Setting width of the error bars to 0.25 for better visibility
+                colour = "black", size = 0.6) +                        # Setting colour and thickness of error bars
+  scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) + # Setting bar colours to colourblind friendly colours
+  labs(x = "\n Habitat", y = "Average Abundance \n") +                 # Adding axis titles (\n leaves a space between plot and title)
+  theme_test() +                                                       # Changing theme
+  theme(legend.position = "none"))                                     # Removing legend
 
 
