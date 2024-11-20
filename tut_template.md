@@ -1,4 +1,4 @@
-<center><img src="{{ site.baseurl }}/tutheaderbl.png" alt="Img"></center>
+<center><img src="images/sparrow.png" alt="Img"></center>
 
 # ANOVA and Tukey's Test Tutorial
 
