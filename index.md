@@ -57,6 +57,8 @@ library(dplyr)
 
 ## 2. Research question and hypothesis
 
+<center><img src="images/sparrow.png" alt="Img"></center>
+
 You can add more text and code, e.g.
 
 ```r
