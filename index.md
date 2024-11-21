@@ -6,21 +6,21 @@
 
 ----
 
-## Tutorial Aims:
+### Tutorial Aims:
 
-### <a href="#section1 "> 1) What is ANOVA and Tukey's Test?</a>
+#### <a href="#section1 "> 1) What is ANOVA and Tukey's Test?</a>
 
-### <a href="#section2"> 2) Research question and hypothesis</a>
+#### <a href="#section2"> 2) Research question and hypothesis</a>
 
-### <a href="#section3"> 3) Data manipulation</a>
+#### <a href="#section3"> 3) Data manipulation</a>
 
-### <a href="#section4"> 4) Data visualisation</a>
+#### <a href="#section4"> 4) Data visualisation</a>
 
-### <a href="#section5"> 5) Running a one-way ANOVA</a>
+#### <a href="#section5"> 5) Running a one-way ANOVA</a>
 
-### <a href="#section6"> 6) Running Tukey's HSD</a>
+#### <a href="#section6"> 6) Running Tukey's HSD</a>
 
-### <a href="#section7"> 7) Communicating model results</a>
+#### <a href="#section7"> 7) Communicating model results</a>
 
 You can read this text, then delete it and replace it with your text about your tutorial: what are the aims, what code do you need to achieve them?
 ---------------------------
@@ -50,7 +50,7 @@ To find the backticks on your keyboard, look towards the top left corner on a Wi
 
 ## 2. Research question and hypothesis
 
-<center><img src="images/sparrow.png" alt="Img"></center>
+<center><img src="images/sparrow.png" alt="Img", height = 400></center>
 <sub>Image: https://www.pexels.com/photo/house-sparrow-on-a-tree-branch-in-spring-nature-29423562/</sub>
 
 
