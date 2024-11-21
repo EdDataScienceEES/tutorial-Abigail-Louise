@@ -44,8 +44,10 @@ str(sparrow_long)
 # 4) Data visualisation ----
 
 # Visualising data with a boxplot
-(sparrow_boxplot <- ggplot(sparrow_long, aes(x = Habitat, y = Abundance, fill = Habitat)) +
-   geom_boxplot())
+(sparrow_boxplot <- ggplot(sparrow_long,                                      
+                           aes(x = Habitat, y = Abundance, fill = Habitat)) + # Setting x axis as habitat and y as abundance 
+   geom_boxplot() +                                                           # Adding data as a boxplot
+   scale_fill_manual(values = c("gold", "springgreen3", "royalblue")))        # Setting box colours to colourblind friendly colours
 
 
 # 5) Running a one-way ANOVA ----
