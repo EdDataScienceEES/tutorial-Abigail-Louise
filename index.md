@@ -1,4 +1,4 @@
-<center><img src="images/tutorial_title_image.png" alt="Img"></center>
+<center><img src="images/tutorial_title.png" alt="Img"></center>
 
 <sub>Image: https://www.pexels.com/photo/sparrows-sitting-on-windowsill-14749635/ & https://ourcodingclub.github.io/</sub>
 
