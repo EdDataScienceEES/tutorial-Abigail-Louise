@@ -2,31 +2,29 @@
 
 <sub>Image: https://www.pexels.com/photo/sparrows-sitting-on-windowsill-14749635/ & https://ourcodingclub.github.io/</sub>
 
-Created by Abigail Haining (28/11/24)
+*Created by Abigail Haining (28/11/24)*
 
-# ANOVA and Tukey's Test Tutorial
+----
 
- To add images, replace `tutheaderbl1.png` with the file name of any image you upload to your GitHub repository.
+## Tutorial Aims:
 
-### Tutorial Aims:
+### <a href="#section1 "> 1) What is ANOVA and Tukey's Test?</a>
 
-#### <a href="#section1 "> 1) What is ANOVA and Tukey's Test?</a>
+### <a href="#section2"> 2) Research question and hypothesis</a>
 
-#### <a href="#section2"> 2) Research question and hypothesis</a>
+### <a href="#section3"> 3) Data manipulation</a>
 
-#### <a href="#section3"> 3) Data manipulation</a>
+### <a href="#section4"> 4) Data visualisation</a>
 
-#### <a href="#section4"> 4) Data visualisation</a>
+### <a href="#section5"> 5) Running a one-way ANOVA</a>
 
-#### <a href="#section5"> 5) Running a one-way ANOVA</a>
+### <a href="#section6"> 6) Running Tukey's HSD</a>
 
-#### <a href="#section6"> 6) Running Tukey's HSD</a>
-
-#### <a href="#section7"> 7) Communicating model results</a>
+### <a href="#section7"> 7) Communicating model results</a>
 
 You can read this text, then delete it and replace it with your text about your tutorial: what are the aims, what code do you need to achieve them?
 ---------------------------
-We are using `<a href="#section_number">text</a>` to create anchors within our text. For example, when you click on section one, the page will automatically go to where you have put `<a name="section_number"></a>`.
+
 
 To create subheadings, you can use `#`, e.g. `# Subheading 1` creates a subheading with a large font size. The more hashtags you add, the smaller the text becomes. If you want to make text bold, you can surround it with `__text__`, which creates __text__. For italics, use only one understore around the text, e.g. `_text_`, _text_.
 
@@ -47,15 +45,6 @@ At the beginning of your tutorial you can ask people to open `RStudio`, create a
 When you have a larger chunk of code, you can paste the whole code in the `Markdown` document and add three backticks on the line before the code chunks starts and on the line after the code chunks ends. After the three backticks that go before your code chunk starts, you can specify in which language the code is written, in our case `R`.
 
 To find the backticks on your keyboard, look towards the top left corner on a Windows computer, perhaps just above `Tab` and before the number one key. On a Mac, look around the left `Shift` key. You can also just copy the backticks from below.
-
-```r
-# Set the working directory
-setwd("your_filepath")
-
-# Load packages
-library(ggplot2)
-library(dplyr)
-```
 
 <a name="section2"></a>
 
@@ -97,6 +86,21 @@ At this point it would be a good idea to include an image of what the plot is me
 <a name="section3"></a>
 
 ## 3) Data manipulation
+
+
+
+```r
+# Set the working directory (enter your own filepath here)
+setwd("C:/Users/abiga/OneDrive/3rd year/Data Science in EES/tutorial-Abigail-Louise")
+
+# You can check where your working directory is using:
+getwd()
+
+# Load packages
+library(tidyverse)
+library(broom)
+```
+
 
 <a name="section4"></a>
 
