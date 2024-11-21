@@ -1,6 +1,8 @@
 <center><img src="images/coding_club_logo.svg" alt="Img" width = 200></center>
 
-<sub>Image: https://ourcodingclub.github.io/</sub>
+<sub>Image: https://www.pexels.com/photo/sparrows-sitting-on-windowsill-14749635/ & https://ourcodingclub.github.io/</sub>
+
+Created by Abigail Haining (28/11/24)
 
 # ANOVA and Tukey's Test Tutorial
 
