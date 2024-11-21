@@ -6,7 +6,7 @@
 
  To add images, replace `tutheaderbl1.png` with the file name of any image you upload to your GitHub repository.
 
-### Tutorial Aims
+### Tutorial Aims:
 
 #### <a href="#section1 "> 1) What is ANOVA and Tukey's Test?</a>
 
