@@ -1,4 +1,5 @@
 <center><img src="images/coding_club_logo.svg" alt="Img", width = 200 ></center>
+<sub>Image: https://ourcodingclub.github.io/</sub>
 
 # ANOVA and Tukey's Test Tutorial
 
@@ -58,6 +59,8 @@ library(dplyr)
 ## 2. Research question and hypothesis
 
 <center><img src="images/sparrow.png" alt="Img"></center>
+<sub>Image: https://www.pexels.com/photo/house-sparrow-on-a-tree-branch-in-spring-nature-29423562/</sub>
+
 
 You can add more text and code, e.g.
 
@@ -86,6 +89,7 @@ ggplot(data = xy_fil, aes(x = x_dat, y = y_dat)) +  # Select the data to use
 At this point it would be a good idea to include an image of what the plot is meant to look like so students can check they've done it right. Replace `IMAGE_NAME.png` with your own image file:
 
 <center> <img src="{{ site.baseurl }}/IMAGE_NAME.png" alt="Img" style="width: 800px;"/> </center>
+
 
 <a name="section3"></a>
 
