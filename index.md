@@ -1,4 +1,4 @@
-<center><img src="images/sparrow.png" alt="Img"></center>
+<center><img src="images/coding_club_logo.svg" alt="Img", width = 200 ></center>
 
 # ANOVA and Tukey's Test Tutorial
 
