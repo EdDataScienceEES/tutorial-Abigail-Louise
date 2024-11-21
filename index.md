@@ -1,4 +1,5 @@
 <center><img src="images/coding_club_logo.svg" alt="Img" width = 200></center>
+
 <sub>Image: https://ourcodingclub.github.io/</sub>
 
 # ANOVA and Tukey's Test Tutorial
