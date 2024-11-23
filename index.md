@@ -73,31 +73,6 @@ __Examples of other post-hoc tests:__
 
 
 
-```r
-# Create fake data
-x_dat <- rnorm(n = 100, mean = 5, sd = 2)  # x data
-y_dat <- rnorm(n = 100, mean = 10, sd = 0.2)  # y data
-xy <- data.frame(x_dat, y_dat)  # combine into data frame
-```
-
-
-
-```r
-xy_fil <- xy %>%  # Create object with the contents of `xy`
-	filter(x_dat < 7.5)  # Keep rows where `x_dat` is less than 7.5
-```
-
-
-```r
-ggplot(data = xy_fil, aes(x = x_dat, y = y_dat)) +  # Select the data to use
-	geom_point() +  # Draw scatter points
-	geom_smooth(method = "loess")  # Draw a loess curve
-```
-
-At this point it would be a good idea to include an image of what the plot is meant to look like so students can check they've done it right. Replace `IMAGE_NAME.png` with your own image file:
-
-<center> <img src="{{ site.baseurl }}/IMAGE_NAME.png" alt="Img" style="width: 800px;"/> </center>
-
 
 <a name="section3"></a>
 
@@ -127,14 +102,38 @@ library(tidyverse)
 library(broom)
 ```
 
-This tutorial uses dummy dataset which is already relatively "clean" so there will not be much data manipulation in this tutorial. If you have a more complex dataset which requires much data wrangling see <a href="https://ourcodingclub.github.io/tutorials/data-manip-intro/">this tutorial</a>.
+This tutorial uses a dummy dataset which is already relatively "clean" so there will not be much data manipulation in this tutorial. If you have a more complex dataset which requires more data wrangling see these tutorials on <a href="https://ourcodingclub.github.io/tutorials/data-manip-intro/">basic data manipulation</a>, <a href="https://ourcodingclub.github.io/tutorials/data-manip-efficient/">efficient data manipulation</a> and <a href="https://ourcodingclub.github.io/tutorials/data-manip-creative-dplyr/">advanced data manipulation</a>.
 
+```r
+# Import data
+sparrow <- read_csv("data/sparrow_data.csv")
+```
+
+
+```r
+# Check the data
+head(sparrow)
+print(sparrow)
+```
+
+```r
+# Convert data frame to long form
+sparrow_long <- gather(sparrow, Habitat, Abundance, c(Urban, Forest, Farmland))
+```
+
+```r
+# Check variables
+str(sparrow_long)
+```
 
 <a name="section4"></a>
 
 ## 4) Data visualisation
 
 It is good practice to visualise your data before undertaking any data analysis.
+
+
+<center> <img src="{{ site.baseurl }}/IMAGE_NAME.png" alt="Img" style="width: 800px;"/> </center>
 
 <a name="section5"></a>
 
