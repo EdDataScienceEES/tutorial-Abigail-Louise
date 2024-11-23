@@ -44,12 +44,15 @@ You can get all of the resources for this tutorial from <a href="https://github.
 ## 1) What is ANOVA and Tukey's Test?
 
 __ANOVA:__
+
 An ANOVA which stands for "ANalysis Of VAriance" is a statistical method used to compare the means across three or more groups. It considers the variability both within each group and between them to determine statistical significance.
 
 __Why should you carry out a post-hoc test?__
+
 If the overall p-value from the ANOVA is less than the significannce level you have specified then we can say at least one of the means of the groups is different from the others. However, this does not tell us which groups differ from each other. This is where a post hoc test comes in to test which groups are different from each other. 
 
 __Tukey's test:__
+
 One of the most commonly used post-hoc tests is Tukey's HSD test, which stands for "Tukey's Honest Significant Difference" test. It makes pairwise comparisons between the means of each group - this means it compares every possible pair of group means to determine if there is a statistically significant difference between them. 
 
 You have probably heard of Type I (false positive) and Type II (false negative) errors before. Well, Tukey's test controls for Type I errors by controlling the family-wise error rate which is the probability of making at least one Type 1 error when performing multiple statistical tests.
@@ -69,7 +72,6 @@ __Examples of other post-hoc tests:__
 <sub>Image: https://www.pexels.com/photo/house-sparrow-on-a-tree-branch-in-spring-nature-29423562/</sub>
 
 
-You can add more text and code, e.g.
 
 ```r
 # Create fake data
@@ -78,14 +80,13 @@ y_dat <- rnorm(n = 100, mean = 10, sd = 0.2)  # y data
 xy <- data.frame(x_dat, y_dat)  # combine into data frame
 ```
 
-Here you can add some more text if you wish.
+
 
 ```r
 xy_fil <- xy %>%  # Create object with the contents of `xy`
 	filter(x_dat < 7.5)  # Keep rows where `x_dat` is less than 7.5
 ```
 
-And finally, plot the data:
 
 ```r
 ggplot(data = xy_fil, aes(x = x_dat, y = y_dat)) +  # Select the data to use
@@ -102,11 +103,17 @@ At this point it would be a good idea to include an image of what the plot is me
 
 ## 3) Data manipulation
 
-At the beginning of your tutorial you can ask people to open `RStudio`, create a new script by clicking on `File/ New File/ R Script` set the working directory and load some packages, for example `ggplot2` and `dplyr`. You can surround package names, functions, actions ("File/ New...") and small chunks of code with backticks, which defines them as inline code blocks and makes them stand out among the text, e.g. `ggplot2`.
+We will begin coding by opening `RStudio` and creating a new script by clicking on `File/ New File/ R Script` 
 
-When you have a larger chunk of code, you can paste the whole code in the `Markdown` document and add three backticks on the line before the code chunks starts and on the line after the code chunks ends. After the three backticks that go before your code chunk starts, you can specify in which language the code is written, in our case `R`.
+It is good practice to start your script by giving it a title and stating who it was written by with a date. 
 
-To find the backticks on your keyboard, look towards the top left corner on a Windows computer, perhaps just above `Tab` and before the number one key. On a Mac, look around the left `Shift` key. You can also just copy the backticks from below.
+```r
+# ANOVA and Tukey's HSD Tutorial full script
+# Written by Abigail Haining (19/11/24)
+```
+
+Next we will set the working directory and load required packages. Here we will load the `tidyverse` package, which includes many helpful packages for data manipulation and data visualisation, such as  `dplyr`, `tidyr`and`ggplot2`. We will also used the package `broom` for tidying model outputs.
+
 
 ```r
 # Set the working directory (enter your own filepath here)
