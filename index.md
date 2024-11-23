@@ -182,17 +182,23 @@ hist(sparrow_anova$residuals, breaks = 30)  # Plotting histogram of residuals an
 # The residuals do not look normally distributed
 ```
 
+<center><img src="plots/his_res.png" alt="Img" style="width: 350;"/></center>
+
 ```r
 plot(sparrow_anova, which = 2) # Plotting Q-Q plot
 # There are heavy tails present which suggests the data has a skewed distribution 
 # Or the outliers do not follow a normal distribution (by looking at the histogram it appears to be the this)
 ```
 
+<center><img src="plots/Q-Q_res.png" alt="Img" style="width: 350;"/></center>
+
 ```r
 # Checking for homoscedasticity
 plot(sparrow_anova, which = 1)
 # The red line is flat against grey dashed line which is what we want to see
 ```
+
+<center><img src="plots/res_vs_fix.png" alt="Img" style="width: 300;"/></center>
 
 ---
 
@@ -215,6 +221,8 @@ To convert results into a better presented format of the summary table you can u
 # Plotting Tukey's test result
 plot(sparrow_test)
 ```
+
+<center><img src="plots/tukey.png" alt="Img" style="width: 300;"/></center>
 
 ---
 
@@ -247,6 +255,8 @@ sparrow_summary <- sparrow_long %>%
   theme(legend.position = "none"))                                     # Removing legend
 ```
 
+<center><img src="plots/barplot.png" alt="Img" style="width: 300;"/></center>
+
 ```r
 # Improve Tukey's test result plot
 (sparrow_tukey_plot <- ggplot(tukey_results, 
@@ -260,6 +270,8 @@ sparrow_summary <- sparrow_long %>%
        title = "Tukey HSD Test with 95% confidence level") +        # Add plot title
   theme_bw(base_size = 12))                                         # Apply a clean theme
 ```
+
+<center><img src="plots/imp_tukey.png" alt="Img" style="width: 300;"/></center>
 
 ---
 
