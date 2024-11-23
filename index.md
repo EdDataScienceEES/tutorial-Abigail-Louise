@@ -156,7 +156,7 @@ It is good practice to visualise your data before undertaking any data analysis.
    theme_bw())                                                                # Apply a clean theme
 ```
 
-<center> <img src="plots/data_vis_boxplot.png" alt="Img" style="width: 800px;"/> </center>
+<center><img src="plots/data_vis_boxplot.png" alt="Img" style="width: 500px;"/></center>
 
 ---
 
