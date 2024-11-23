@@ -24,21 +24,26 @@
 
 ---------------------------
 
-Often in ecological and environmental research you will need to compare groups of data
+Often in ecological and environmental research you will need to compare groups of data to see if there is a difference between the groups. This could be comparing plant growth between different soil types or water quality in different rivers for example. In this tutorial we will look at the difference in house sparrow (*Passer domesticus*) abundance between different habitats.
 
-This tutorial introduces how to carry out a one-way ANOVA using R and how to interpret the results, as well as testing the validity of the ANOVA using Tukey's HSD Post-hoc Test. 
+You may have used a T-test before which compares the means across two groups to see if there is a statistically significant difference. If you want to compare more than two groups you can use a one-way ANOVA and to further analyse the results of the ANOVA you can perform a post-hoc test. 
 
-
-This is some introductory text for your tutorial. Explain the skills that will be learned and why they are important. Set the tutorial in context.
+__In tutorial you will learn how to:__
+- Load and prepare data for analysis in RStudio
+- Understand when and why to use a one-way ANOVA and Tukey's test
+- Perform a one-way ANOVA and Tukey's test
+- Interpret the outputs from these tests
+- Recognise assumptions of these tests
+- Visualise the data and outputs
+- Report findings
 
 You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-Abigail-Louise.git" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
-
 
 <a name="section1"></a>
 
 ## 1) What is ANOVA and Tukey's Test?
 
-You may have compared means across two groups before where you would have used a T-Test. An ANOVA which stands for "ANalysis Of VAriance" is a statistical method used to compare the means across three or more groups. It considers the variability both within each group and between them to determine statistical significance.
+An ANOVA which stands for "ANalysis Of VAriance" is a statistical method used to compare the means across three or more groups. It considers the variability both within each group and between them to determine statistical significance.
 
 If the overall p-value from the ANOVA is less than the significannce level you have specified then we can say at least one of the means of the groups is different from the others. However, this does not tell us which groups differ from each other. This is where a post hoc test comes in to test which groups are different from each other. 
 
