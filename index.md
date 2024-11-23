@@ -127,6 +127,8 @@ library(tidyverse)
 library(broom)
 ```
 
+This tutorial uses dummy dataset which is already relatively "clean" so there will not be much data manipulation in this tutorial. If you have a more complex dataset which requires much data wrangling see <a href="https://ourcodingclub.github.io/tutorials/data-manip-intro/">this tutorial</a>.
+
 
 <a name="section4"></a>
 
