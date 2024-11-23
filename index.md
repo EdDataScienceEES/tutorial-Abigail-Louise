@@ -4,11 +4,11 @@
 
 *Created by Abigail Haining (28/11/24)*
 
-----
+---
 
-### Tutorial Aims:
+### Tutorial Steps:
 
-#### <a href="#section1 "> 1) What is ANOVA and Tukey's Test?</a>
+#### <a href="#section1"> 1) What is ANOVA and Tukey's Test?</a>
 
 #### <a href="#section2"> 2) Research question and hypothesis</a>
 
@@ -22,15 +22,15 @@
 
 #### <a href="#section7"> 7) Communicating model results</a>
 
----------------------------
+---
 
 Often in ecological and environmental research you will need to compare groups of data to see if there is a difference between the groups. This could be comparing plant growth between different soil types or water quality in different rivers for example. In this tutorial we will look at the difference in house sparrow (*Passer domesticus*) abundance between different habitats.
 
-You may have used a T-test before which compares the means across two groups to see if there is a statistically significant difference. If you want to compare more than two groups you can use a one-way ANOVA and to further analyse the results of the ANOVA you can perform a post-hoc test, such as Tukey's test. 
+You may have used a T-test before which compares the means across two groups to see if there is a statistically significant difference. If you want to compare more than two groups you can use a one-way ANOVA. To further analyse the results of the ANOVA you can perform a post-hoc test, such as Tukey's test which is covered in this tutorial. 
 
 __In this tutorial you will learn how to:__
 - Load and prepare data for analysis in RStudio
-- Understand when and why to use a one-way ANOVA and Tukey's test
+- Understand when to use/the purpose of a one-way ANOVA and Tukey's test
 - Perform a one-way ANOVA and Tukey's test
 - Interpret the outputs from these tests
 - Recognise assumptions of these tests
@@ -40,6 +40,8 @@ __In this tutorial you will learn how to:__
 Please note: This tutorial assumes a basic understanding on how to use RStudio and produce plots.
 
 You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-Abigail-Louise.git" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
+
+---
 
 <a name="section1"></a>
 
@@ -66,6 +68,8 @@ __Examples of other post-hoc tests:__
 - Dunn's test is a non-parametric test which can be used for data that is not normally distibuted
 - Scheffé's test is more flexible and can be used for non-pairwise comparisons
 
+---
+
 <a name="section2"></a>
 
 ## 2. Research question and hypothesis
@@ -73,8 +77,7 @@ __Examples of other post-hoc tests:__
 <center><img src="images/sparrow.png" alt="Img", height = 400></center>
 <sub>Image: https://www.pexels.com/photo/house-sparrow-on-a-tree-branch-in-spring-nature-29423562/</sub>
 
-
-
+---
 
 <a name="section3"></a>
 
@@ -136,6 +139,8 @@ We can check the class of each object by using the `str()` function.
 str(sparrow_long)
 ```
 
+---
+
 <a name="section4"></a>
 
 ## 4) Data visualisation
@@ -147,10 +152,13 @@ It is good practice to visualise your data before undertaking any data analysis.
 (sparrow_boxplot <- ggplot(sparrow_long,                                      
                            aes(x = Habitat, y = Abundance, fill = Habitat)) + # Setting x axis as habitat and y as abundance 
    geom_boxplot() +                                                           # Adding data as a boxplot
-   scale_fill_manual(values = c("gold", "springgreen3", "royalblue")))        # Setting box colours to colourblind friendly colours
+   scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) +       # Setting box colours to colourblind friendly colours
+   theme_bw())                                                                # Apply a clean theme
 ```
 
 <center> <img src="{{ site.baseurl }}/IMAGE_NAME.png" alt="Img" style="width: 800px;"/> </center>
+
+---
 
 <a name="section5"></a>
 
@@ -186,6 +194,8 @@ plot(sparrow_anova, which = 1)
 # The red line is flat against grey dashed line which is what we want to see
 ```
 
+---
+
 <a name="section6"></a>
 
 ## 6) Running Tukey's HSD
@@ -205,6 +215,8 @@ To convert results into a better presented format of the summary table you can u
 # Plotting Tukey's test result
 plot(sparrow_test)
 ```
+
+---
 
 <a name="section7"></a>
 
@@ -231,7 +243,7 @@ sparrow_summary <- sparrow_long %>%
                 colour = "black", linewidth = 0.6) +                        # Setting colour and thickness of error bars
   scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) + # Setting bar colours to colourblind friendly colours
   labs(x = "\n Habitat", y = "Average Abundance \n") +                 # Adding axis titles (\n leaves a space between plot and title)
-  theme_test() +                                                       # Changing theme
+  theme_test() +                                                       # Apply a clean theme
   theme(legend.position = "none"))                                     # Removing legend
 ```
 
@@ -246,8 +258,19 @@ sparrow_summary <- sparrow_long %>%
   coord_flip() +                                                    # Flip coordinates for horizontal orientation
   labs(x = "Pairwise Comparisons", y = "Mean Difference",           # Add informative axis titles
        title = "Tukey HSD Test with 95% confidence level") +        # Add plot title
-  theme_minimal(base_size = 12))                                    # Apply a clean theme
+  theme_bw(base_size = 12))                                         # Apply a clean theme
 ```
+
+---
+
+__After completion this tutorial you should be able to:__
+- Load and prepare data for analysis in RStudio
+- Understand when to use/the purpose of a one-way ANOVA and Tukey's test
+- Perform a one-way ANOVA and Tukey's test
+- Interpret the outputs from these tests
+- Recognise assumptions of these tests
+- Visualise the data and outputs
+- Report findings
 
 This is the end of the tutorial. Summarise what the student has learned, possibly even with a list of learning outcomes. In this tutorial we learned:
 
