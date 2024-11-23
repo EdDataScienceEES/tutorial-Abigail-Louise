@@ -47,7 +47,8 @@ str(sparrow_long)
 (sparrow_boxplot <- ggplot(sparrow_long,                                      
                            aes(x = Habitat, y = Abundance, fill = Habitat)) + # Setting x axis as habitat and y as abundance 
    geom_boxplot() +                                                           # Adding data as a boxplot
-   scale_fill_manual(values = c("gold", "springgreen3", "royalblue")))        # Setting box colours to colourblind friendly colours
+   scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) +       # Setting box colours to colourblind friendly colours
+   theme_bw())                                                                # Apply a clean theme
 
 
 # 5) Running a one-way ANOVA ----
@@ -103,10 +104,10 @@ sparrow_summary <- sparrow_long %>%
            stat = "identity", colour = "black") +                      # Setting stat to identity uses average_abundance instead of count and adding black borders to bars
   geom_errorbar(aes(x = Habitat, ymin = average_abundance - SE,        # Adding error bars to represent standard error
                 ymax = average_abundance + SE), width = 0.25,          # Setting width of the error bars to 0.25 for better visibility
-                colour = "black", linewidth = 0.6) +                        # Setting colour and thickness of error bars
+                colour = "black", linewidth = 0.6) +                   # Setting colour and thickness of error bars
   scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) + # Setting bar colours to colourblind friendly colours
   labs(x = "\n Habitat", y = "Average Abundance \n") +                 # Adding axis titles (\n leaves a space between plot and title)
-  theme_test() +                                                       # Changing theme
+  theme_test() +                                                       # Apply a clean theme
   theme(legend.position = "none"))                                     # Removing legend
 
 
@@ -120,7 +121,7 @@ sparrow_summary <- sparrow_long %>%
   coord_flip() +                                                    # Flip coordinates for horizontal orientation
   labs(x = "Pairwise Comparisons", y = "Mean Difference",           # Add informative axis titles
        title = "Tukey HSD Test with 95% confidence level") +        # Add plot title
-  theme_minimal(base_size = 12))                                    # Apply a clean theme
+  theme_bw(base_size = 12))                                         # Apply a clean theme
 
 
 
