@@ -24,7 +24,9 @@
 
 ---------------------------
 
-This tutorial introduces how to carry out a one-way ANOVA using R and how to interpret
+Often in ecological and environmental research you will need to compare groups of data
+
+This tutorial introduces how to carry out a one-way ANOVA using R and how to interpret the results, as well as testing the validity of the ANOVA using Tukey's HSD Post-hoc Test. 
 
 
 This is some introductory text for your tutorial. Explain the skills that will be learned and why they are important. Set the tutorial in context.
@@ -36,8 +38,13 @@ You can get all of the resources for this tutorial from <a href="https://github.
 
 ## 1) What is ANOVA and Tukey's Test?
 
-ANOVA is a statistical method used to compare the means across three or more groups. For across two groups you would use a T-test. It considers the variability both within each group and between them to determine statistical significance.
+You may have compared means across two groups before where you would have used a T-Test. An ANOVA which stands for "ANalysis Of VAriance" is a statistical method used to compare the means across three or more groups. It considers the variability both within each group and between them to determine statistical significance.
 
+If the overall p-value from the ANOVA is less than the significannce level you have specified then we can say at least one of the means of the groups is different from the others. However, this does not tell us which groups differ from each other. This is where a post hoc test comes in to test which groups are different from each other. 
+
+One of the most commonly used post-hoc tests is Tukey's HSD test, which stands for "Tukey's Honest Significant Difference" test. It makes pairwise comparisons between the means of each group - this means it compares every possible pair of group means to determine if there is a statistically significant difference between them. 
+
+You have probably heard of Type I (false positive) and Type II (false negative) errors before. Well, Tukey's test controls for Type I errors by controlling the family-wise error rate which is the probability of making at least one Type 1 error when performing multiple statistical tests.
 
 <a name="section2"></a>
 
