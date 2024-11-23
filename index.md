@@ -37,6 +37,8 @@ __In tutorial you will learn how to:__
 - Visualise the data and outputs
 - Report findings
 
+Please note: This tutorial assumes a basic understanding on how to use RStudio and produce plots.
+
 You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-Abigail-Louise.git" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
 
 <a name="section1"></a>
@@ -104,11 +106,14 @@ library(broom)
 
 This tutorial uses a dummy dataset which is already relatively "clean" so there will not be much data manipulation in this tutorial. If you have a more complex dataset which requires more data wrangling see these tutorials on <a href="https://ourcodingclub.github.io/tutorials/data-manip-intro/">basic data manipulation</a>, <a href="https://ourcodingclub.github.io/tutorials/data-manip-efficient/">efficient data manipulation</a> and <a href="https://ourcodingclub.github.io/tutorials/data-manip-creative-dplyr/">advanced data manipulation</a>.
 
+Next, we need to import our data which can be done by clicking `Files/ data/ sparrow_data.csv/ Import Dataset` then click the `Import` button in the bottom right of the window. Or this can be done by directly typing the code below:
+
 ```r
 # Import data
 sparrow <- read_csv("data/sparrow_data.csv")
 ```
 
+We can check the first 6 rows of data by using the `head()` function and see the whole dataset using the `print()` function.
 
 ```r
 # Check the data
