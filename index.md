@@ -1,10 +1,10 @@
-<center><img src="images/coding_club_logo.svg" alt="Img" width = 200></center>
+<center><img src="images/tutorial_title.png" alt="Img"></center>
 
-<sub>Image: https://ourcodingclub.github.io/</sub>
+<sub>Image: https://www.pexels.com/photo/sparrows-sitting-on-windowsill-14749635/ & https://ourcodingclub.github.io/</sub>
 
-# ANOVA and Tukey's Test Tutorial
+*Created by Abigail Haining (28/11/24)*
 
- To add images, replace `tutheaderbl1.png` with the file name of any image you upload to your GitHub repository.
+----
 
 ### Tutorial Aims:
 
@@ -22,79 +22,119 @@
 
 #### <a href="#section7"> 7) Communicating model results</a>
 
-You can read this text, then delete it and replace it with your text about your tutorial: what are the aims, what code do you need to achieve them?
 ---------------------------
-We are using `<a href="#section_number">text</a>` to create anchors within our text. For example, when you click on section one, the page will automatically go to where you have put `<a name="section_number"></a>`.
 
-To create subheadings, you can use `#`, e.g. `# Subheading 1` creates a subheading with a large font size. The more hashtags you add, the smaller the text becomes. If you want to make text bold, you can surround it with `__text__`, which creates __text__. For italics, use only one understore around the text, e.g. `_text_`, _text_.
+Often in ecological and environmental research you will need to compare groups of data to see if there is a difference between the groups. This could be comparing plant growth between different soil types or water quality in different rivers for example. In this tutorial we will look at the difference in house sparrow (*Passer domesticus*) abundance between different habitats.
 
-## Subheading 2
-### Subheading 3
+You may have used a T-test before which compares the means across two groups to see if there is a statistically significant difference. If you want to compare more than two groups you can use a one-way ANOVA and to further analyse the results of the ANOVA you can perform a post-hoc test, such as Tukey's test. 
 
-This is some introductory text for your tutorial. Explain the skills that will be learned and why they are important. Set the tutorial in context.
+__In this tutorial you will learn how to:__
+- Load and prepare data for analysis in RStudio
+- Understand when and why to use a one-way ANOVA and Tukey's test
+- Perform a one-way ANOVA and Tukey's test
+- Interpret the outputs from these tests
+- Recognise assumptions of these tests
+- Visualise the data and outputs
+- Report findings
 
-You can get all of the resources for this tutorial from <a href="https://github.com/ourcodingclub/CC-EAB-tut-ideas" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
+Please note: This tutorial assumes a basic understanding on how to use RStudio and produce plots.
+
+You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-Abigail-Louise.git" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
 
 <a name="section1"></a>
 
 ## 1) What is ANOVA and Tukey's Test?
 
+__ANOVA:__
 
-At the beginning of your tutorial you can ask people to open `RStudio`, create a new script by clicking on `File/ New File/ R Script` set the working directory and load some packages, for example `ggplot2` and `dplyr`. You can surround package names, functions, actions ("File/ New...") and small chunks of code with backticks, which defines them as inline code blocks and makes them stand out among the text, e.g. `ggplot2`.
+An ANOVA which stands for "ANalysis Of VAriance" is a statistical method used to compare the means across three or more groups. It considers the variability both within each group and between them to determine statistical significance.
 
-When you have a larger chunk of code, you can paste the whole code in the `Markdown` document and add three backticks on the line before the code chunks starts and on the line after the code chunks ends. After the three backticks that go before your code chunk starts, you can specify in which language the code is written, in our case `R`.
+__Why should you carry out a post-hoc test?__
 
-To find the backticks on your keyboard, look towards the top left corner on a Windows computer, perhaps just above `Tab` and before the number one key. On a Mac, look around the left `Shift` key. You can also just copy the backticks from below.
+If the overall p-value from the ANOVA is less than the significannce level you have specified then we can say at least one of the means of the groups is different from the others. However, this does not tell us which groups differ from each other. This is where a post hoc test comes in to test which groups are different from each other. 
 
-```r
-# Set the working directory
-setwd("your_filepath")
+__Tukey's test:__
 
-# Load packages
-library(ggplot2)
-library(dplyr)
-```
+One of the most commonly used post-hoc tests is Tukey's HSD test, which stands for "Tukey's Honest Significant Difference" test. It makes pairwise comparisons between the means of each group - this means it compares every possible pair of group means to determine if there is a statistically significant difference between them. 
+
+You have probably heard of Type I (false positive) and Type II (false negative) errors before. Well, Tukey's test controls for Type I errors by controlling the family-wise error rate which is the probability of making at least one Type 1 error when performing multiple statistical tests.
+
+Other strengths of Tukey's test include ease of interpretation and a good balance of statistical power which is the ability to detect true differences and control of Type I errors which is why this post-hoc has been chosen for this introductory tutorial. It is also important to be aware of its limitations though, which include the assumption of equal variances across all groups and a normal distribution of residuals (as required by ANOVA), it is restricted to pairwise tests and sample sizes must be approximately equal. If the assumptions of the Tukey's test are met it should produce valid outputs and if your data does not meet them there are many others post-hoc tests out there. 
+
+__Examples of other post-hoc tests:__
+- Games-Howell test can handle unequal variances and sample sizes between groups
+- Dunn's test is a non-parametric test which can be used for data that is not normally distibuted
+- Scheffé's test is more flexible and can be used for non-pairwise comparisons
 
 <a name="section2"></a>
 
 ## 2. Research question and hypothesis
 
-<center><img src="images/sparrow.png" alt="Img"></center>
+<center><img src="images/sparrow.png" alt="Img", height = 400></center>
 <sub>Image: https://www.pexels.com/photo/house-sparrow-on-a-tree-branch-in-spring-nature-29423562/</sub>
 
 
-You can add more text and code, e.g.
-
-```r
-# Create fake data
-x_dat <- rnorm(n = 100, mean = 5, sd = 2)  # x data
-y_dat <- rnorm(n = 100, mean = 10, sd = 0.2)  # y data
-xy <- data.frame(x_dat, y_dat)  # combine into data frame
-```
-
-Here you can add some more text if you wish.
-
-```r
-xy_fil <- xy %>%  # Create object with the contents of `xy`
-	filter(x_dat < 7.5)  # Keep rows where `x_dat` is less than 7.5
-```
-
-And finally, plot the data:
-
-```r
-ggplot(data = xy_fil, aes(x = x_dat, y = y_dat)) +  # Select the data to use
-	geom_point() +  # Draw scatter points
-	geom_smooth(method = "loess")  # Draw a loess curve
-```
-
-At this point it would be a good idea to include an image of what the plot is meant to look like so students can check they've done it right. Replace `IMAGE_NAME.png` with your own image file:
-
-<center> <img src="{{ site.baseurl }}/IMAGE_NAME.png" alt="Img" style="width: 800px;"/> </center>
 
 
 <a name="section3"></a>
 
 ## 3) Data manipulation
+
+We will begin coding by opening `RStudio` and creating a new script by clicking on `File/ New File/ R Script` 
+
+It is good practice to start your script by giving it a title and stating who it was written by with a date. 
+
+```r
+# ANOVA and Tukey's HSD Tutorial full script
+# Written by Abigail Haining (19/11/24)
+```
+
+Next we will set the working directory and load required packages. Here we will load the `tidyverse` package, which includes many helpful packages for data manipulation and data visualisation, such as  `dplyr`, `tidyr`and`ggplot2`. We will also used the package `broom` for tidying model outputs.
+
+
+```r
+# Set the working directory (enter your own filepath here)
+setwd("C:/Users/abiga/OneDrive/3rd year/Data Science in EES/tutorial-Abigail-Louise")
+
+# You can check where your working directory is using:
+getwd()
+
+# Load packages
+library(tidyverse)
+library(broom)
+```
+
+This tutorial uses a dummy dataset which is already relatively "clean" so there will not be much data manipulation in this tutorial. If you have a more complex dataset which requires more data wrangling see these tutorials on <a href="https://ourcodingclub.github.io/tutorials/data-manip-intro/">basic data manipulation</a>, <a href="https://ourcodingclub.github.io/tutorials/data-manip-efficient/">efficient data manipulation</a> and <a href="https://ourcodingclub.github.io/tutorials/data-manip-creative-dplyr/">advanced data manipulation</a>.
+
+Next, we need to import our data which can be done by directly typing the code below into your script. Or you can click `Files/ data/ sparrow_data.csv/ Import Dataset` then click the `Import` button in the bottom right of the window. You will notice this code will be entered into the console so if you would like to save it, copy and paste the code into your script. 
+
+```r
+# Import data
+sparrow <- read_csv("data/sparrow_data.csv")
+```
+
+We can check the first 6 rows of data by using the `head()` function. Or to see the whole dataset you can use the `print()` function or the `view` function.
+
+```r
+# Check the data
+head(sparrow)
+print(sparrow)
+view(sparrow)
+```
+
+R requires data to be in long format, where the dataset is arranged with row representing an oberservation and each column representing a variable.
+
+```r
+# Convert data frame to long form
+sparrow_long <- gather(sparrow, Habitat, Abundance, c(Urban, Forest, Farmland))
+```
+
+We can check the class of each object by using the `str()` function.
+
+```r
+# Check variables
+str(sparrow_long)
+```
 
 <a name="section4"></a>
 
@@ -102,19 +142,112 @@ At this point it would be a good idea to include an image of what the plot is me
 
 It is good practice to visualise your data before undertaking any data analysis.
 
+```r
+# Visualising data with a boxplot
+(sparrow_boxplot <- ggplot(sparrow_long,                                      
+                           aes(x = Habitat, y = Abundance, fill = Habitat)) + # Setting x axis as habitat and y as abundance 
+   geom_boxplot() +                                                           # Adding data as a boxplot
+   scale_fill_manual(values = c("gold", "springgreen3", "royalblue")))        # Setting box colours to colourblind friendly colours
+```
+
+<center> <img src="{{ site.baseurl }}/IMAGE_NAME.png" alt="Img" style="width: 800px;"/> </center>
+
 <a name="section5"></a>
 
 ## 5) Running a one-way ANOVA
+
+```r
+# Running a one-way ANOVA of abundance against habitat
+sparrow_anova <- aov(Abundance ~ Habitat, data = sparrow_long)
+
+# Printing summary output
+summary(sparrow_anova)
+```
+
+__Checking assumptions:__
+
+We can check for a normal distribution of residuals by plotting a histogram of the residuals and a normal Q-Q plot.
+
+
+```r
+hist(sparrow_anova$residuals, breaks = 30)  # Plotting histogram of residuals and increasing intervals to get a better visualisation
+# The residuals do not look normally distributed
+```
+
+```r
+plot(sparrow_anova, which = 2) # Plotting Q-Q plot
+# There are heavy tails present which suggests the data has a skewed distribution 
+# Or the outliers do not follow a normal distribution (by looking at the histogram it appears to be the this)
+```
+
+```r
+# Checking for homoscedasticity
+plot(sparrow_anova, which = 1)
+# The red line is flat against grey dashed line which is what we want to see
+```
 
 <a name="section6"></a>
 
 ## 6) Running Tukey's HSD
 
+```r
+# Running Tukey's HSD post-hoc test on the anova output and setting the confidence level to 95%
+(sparrow_test <- TukeyHSD(sparrow_anova, conf.level=.95))
+```
+
+To convert results into a better presented format of the summary table you can use the broom package.
+
+```r
+(tukey_results <- broom::tidy(sparrow_test)) # Creating tidy data frame using broom
+```
+
+```r
+# Plotting Tukey's test result
+plot(sparrow_test)
+```
+
 <a name="section7"></a>
 
 ## 7) Communicating model results
 
-More text, code and images.
+```r
+# Creating summary table of key statistics 
+sparrow_summary <- sparrow_long %>%
+  group_by(Habitat) %>%                          # Grouping the abundance data by habitat
+  summarise(n = n(),                             # "n" is the number of observations
+            average_abundance = mean(Abundance), # Average abundance of each habitat
+            SD = sd(Abundance)) %>%              # Standard deviation of abundance in each habitat
+  mutate(SE = SD/sqrt(n))
+```
+
+
+```r
+# Creating bar plot of sparrow summary
+(sparrow_barplot <- ggplot(data = sparrow_summary) +
+  geom_bar(aes(x = Habitat, y = average_abundance, fill = Habitat),    # Creating bar plot with habitat on the x axis and average abundance on the y
+           stat = "identity", colour = "black") +                      # Setting stat to identity uses average_abundance instead of count and adding black borders to bars
+  geom_errorbar(aes(x = Habitat, ymin = average_abundance - SE,        # Adding error bars to represent standard error
+                ymax = average_abundance + SE), width = 0.25,          # Setting width of the error bars to 0.25 for better visibility
+                colour = "black", linewidth = 0.6) +                        # Setting colour and thickness of error bars
+  scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) + # Setting bar colours to colourblind friendly colours
+  labs(x = "\n Habitat", y = "Average Abundance \n") +                 # Adding axis titles (\n leaves a space between plot and title)
+  theme_test() +                                                       # Changing theme
+  theme(legend.position = "none"))                                     # Removing legend
+```
+
+```r
+# Improve Tukey's test result plot
+(sparrow_tukey_plot <- ggplot(tukey_results, 
+                              aes(x = contrast, y = estimate)) +    # Set x axis to pairwise comparisons and y to mean differences
+  geom_point(color = "black", size = 2) +                           # Add points for mean differences and increase size
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high),             # Add error bars showing confidence intervals
+                width = 0.2, color = "black") +                     # Add error bars for confidence intervals
+  geom_hline(yintercept = 0, linetype = "dashed", color = "blue") + # Add a reference line at 0 and highlight with blue colour
+  coord_flip() +                                                    # Flip coordinates for horizontal orientation
+  labs(x = "Pairwise Comparisons", y = "Mean Difference",           # Add informative axis titles
+       title = "Tukey HSD Test with 95% confidence level") +        # Add plot title
+  theme_minimal(base_size = 12))                                    # Apply a clean theme
+```
 
 This is the end of the tutorial. Summarise what the student has learned, possibly even with a list of learning outcomes. In this tutorial we learned:
 
