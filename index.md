@@ -26,9 +26,9 @@
 
 Often in ecological and environmental research you will need to compare groups of data to see if there is a difference between the groups. This could be comparing plant growth between different soil types or water quality in different rivers for example. In this tutorial we will look at the difference in house sparrow (*Passer domesticus*) abundance between different habitats.
 
-You may have used a T-test before which compares the means across two groups to see if there is a statistically significant difference. If you want to compare more than two groups you can use a one-way ANOVA and to further analyse the results of the ANOVA you can perform a post-hoc test. 
+You may have used a T-test before which compares the means across two groups to see if there is a statistically significant difference. If you want to compare more than two groups you can use a one-way ANOVA and to further analyse the results of the ANOVA you can perform a post-hoc test, such as Tukey's test. 
 
-__In tutorial you will learn how to:__
+__In this tutorial you will learn how to:__
 - Load and prepare data for analysis in RStudio
 - Understand when and why to use a one-way ANOVA and Tukey's test
 - Perform a one-way ANOVA and Tukey's test
@@ -106,25 +106,30 @@ library(broom)
 
 This tutorial uses a dummy dataset which is already relatively "clean" so there will not be much data manipulation in this tutorial. If you have a more complex dataset which requires more data wrangling see these tutorials on <a href="https://ourcodingclub.github.io/tutorials/data-manip-intro/">basic data manipulation</a>, <a href="https://ourcodingclub.github.io/tutorials/data-manip-efficient/">efficient data manipulation</a> and <a href="https://ourcodingclub.github.io/tutorials/data-manip-creative-dplyr/">advanced data manipulation</a>.
 
-Next, we need to import our data which can be done by clicking `Files/ data/ sparrow_data.csv/ Import Dataset` then click the `Import` button in the bottom right of the window. Or this can be done by directly typing the code below:
+Next, we need to import our data which can be done by directly typing the code below into your script. Or you can click `Files/ data/ sparrow_data.csv/ Import Dataset` then click the `Import` button in the bottom right of the window. You will notice this code will be entered into the console so if you would like to save it, copy and paste the code into your script. 
 
 ```r
 # Import data
 sparrow <- read_csv("data/sparrow_data.csv")
 ```
 
-We can check the first 6 rows of data by using the `head()` function and see the whole dataset using the `print()` function.
+We can check the first 6 rows of data by using the `head()` function. Or to see the whole dataset you can use the `print()` function or the `view` function.
 
 ```r
 # Check the data
 head(sparrow)
 print(sparrow)
+view(sparrow)
 ```
+
+R requires data to be in long format, where the dataset is arranged with row representing an oberservation and each column representing a variable.
 
 ```r
 # Convert data frame to long form
 sparrow_long <- gather(sparrow, Habitat, Abundance, c(Urban, Forest, Farmland))
 ```
+
+We can check the class of each object by using the `str()` function.
 
 ```r
 # Check variables
