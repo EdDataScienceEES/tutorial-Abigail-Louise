@@ -1,5 +1,4 @@
 # ANOVA and Tukey's HSD Tutorial full script
-
 # Written by Abigail Haining (19/11/24)
 
 # Tutorial Aims:
@@ -33,6 +32,7 @@ sparrow <- read_csv("data/sparrow_data.csv")
 # Check the data
 head(sparrow)
 print(sparrow)
+view(sparrow)
 
 # Convert data frame to long form
 sparrow_long <- gather(sparrow, Habitat, Abundance, c(Urban, Forest, Farmland))
