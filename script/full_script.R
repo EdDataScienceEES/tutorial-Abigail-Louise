@@ -1,20 +1,17 @@
 # ANOVA and Tukey's HSD Tutorial full script
 # Written by Abigail Haining (19/11/24)
 
-# Tutorial Aims:
-# 1) What is ANOVA and Tukey's Test?
-# 2) Research question and hypothesis
-# 3) Data manipulation
-# 4) Data visualisation
-# 5) Running a one-way ANOVA
-# 6) Running Tukey's HSD
-# 7) Communicating model results
+# Workflow:
+# 1) Set working directory, load packages and import data
+# 2) Data manipulation
+# 3) Data visualisation
+# 4) Running a one-way ANOVA
+# 5) Running Tukey's HSD
+# 6) Communicating model results
 
 
-# For 1 & 2 see tutorial ----
 
-
-# 3) Data manipulation ----
+# 1) Set working directory, load packages and import data ----
 
 # Set the working directory (enter your own filepath here)
 setwd("C:/Users/abiga/OneDrive/3rd year/Data Science in EES/tutorial-Abigail-Louise")
@@ -34,14 +31,14 @@ head(sparrow)
 print(sparrow)
 view(sparrow)
 
+
+# 2) Data manipulation ----
+
 # Convert data frame to long form
-sparrow_long <- gather(sparrow, Habitat, Abundance, c(Urban, Forest, Farmland))
-
-# Check variables
-str(sparrow_long)
+sparrow_long <- pivot_longer(sparrow, cols = c(Urban, Forest, Farmland), names_to = "Habitat", values_to = "Abundance")
 
 
-# 4) Data visualisation ----
+# 3) Data visualisation ----
 
 # Visualising data with a boxplot
 (sparrow_boxplot <- ggplot(sparrow_long,                                      
@@ -51,7 +48,7 @@ str(sparrow_long)
    theme_bw())                                                                # Apply a clean theme
 
 
-# 5) Running a one-way ANOVA ----
+# 4) Running a one-way ANOVA ----
 
 # Running a one-way ANOVA of abundance against habitat
 sparrow_anova <- aov(Abundance ~ Habitat, data = sparrow_long)
@@ -70,13 +67,12 @@ plot(sparrow_anova, which = 2) # Plotting Q-Q plot
 # There are heavy tails present which suggests the data has a skewed distribution 
 # Or the outliers do not follow a normal distribution (by looking at the histogram it appears to be the this)
 
-
 # Checking for homoscedasticity
 plot(sparrow_anova, which = 1)
 # The red line is flat against grey dashed line which is what we want to see
 
 
-# 6) Running Tukey's HSD ----
+# 5) Running Tukey's HSD ----
 
 # Running Tukey's HSD post-hoc test on the anova output and setting the confidence level to 95%
 (sparrow_test <- TukeyHSD(sparrow_anova, conf.level=.95))
@@ -88,7 +84,7 @@ plot(sparrow_anova, which = 1)
 plot(sparrow_test)
 
 
-# 7) Communicating model results ----
+# 6) Communicating model results ----
 
 # Creating summary table of key statistics 
 sparrow_summary <- sparrow_long %>%
