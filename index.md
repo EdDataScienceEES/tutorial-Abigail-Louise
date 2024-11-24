@@ -116,7 +116,7 @@ Next, we need to import our data which can be done by directly typing the code b
 sparrow <- read_csv("data/sparrow_data.csv")
 ```
 
-We can check the first 6 rows of data by using the `head()` function. Or to see the whole dataset you can use the `print()` function or the `view` function.
+We can check the first 6 rows of data and the column headers by using the `head()` function. Or to see the whole dataset you can use the `print()` function or the `view()` function.
 
 ```r
 # Check the data
@@ -125,20 +125,12 @@ print(sparrow)
 view(sparrow)
 ```
 
-R requires data to be in long format, where the dataset is arranged with row representing an oberservation and each column representing a variable.
+R requires data to be in long format for data analysis, where the dataset is arranged with each row representing an oberservation and each column representing a variable. We can do this using the `pivot_longer()` function, where `sparrow` refers to the data frame; `cols = c(Urban, Forest, Farmland)` refers to the columns we want to gather into a single column; `names_to = "Habitat"` refers to the name of the new column we are creating; and `values_to = "Abundance"` refers to the name of next new column which stores the values of the new gathered column.
 
 ```r
 # Convert data frame to long form
-sparrow_long <- gather(sparrow, Habitat, Abundance, c(Urban, Forest, Farmland))
+sparrow_long <- pivot_longer(sparrow, cols = c(Urban, Forest, Farmland), names_to = "Habitat", values_to = "Abundance")
 ```
-
-We can check the class of each object by using the `str()` function.
-
-```r
-# Check variables
-str(sparrow_long)
-```
-
 ---
 
 <a name="section4"></a>
@@ -182,17 +174,23 @@ hist(sparrow_anova$residuals, breaks = 30)  # Plotting histogram of residuals an
 # The residuals do not look normally distributed
 ```
 
+<center><img src="plots/his_res.png" alt="Img" style="width: 350;"/></center>
+
 ```r
 plot(sparrow_anova, which = 2) # Plotting Q-Q plot
 # There are heavy tails present which suggests the data has a skewed distribution 
 # Or the outliers do not follow a normal distribution (by looking at the histogram it appears to be the this)
 ```
 
+<center><img src="plots/Q-Q_res.png" alt="Img" style="width: 350;"/></center>
+
 ```r
 # Checking for homoscedasticity
 plot(sparrow_anova, which = 1)
 # The red line is flat against grey dashed line which is what we want to see
 ```
+
+<center><img src="plots/res_vs_fix.png" alt="Img" style="width: 300;"/></center>
 
 ---
 
@@ -215,6 +213,8 @@ To convert results into a better presented format of the summary table you can u
 # Plotting Tukey's test result
 plot(sparrow_test)
 ```
+
+<center><img src="plots/tukey.png" alt="Img" style="width: 300;"/></center>
 
 ---
 
@@ -247,6 +247,8 @@ sparrow_summary <- sparrow_long %>%
   theme(legend.position = "none"))                                     # Removing legend
 ```
 
+<center><img src="plots/barplot.png" alt="Img" style="width: 300;"/></center>
+
 ```r
 # Improve Tukey's test result plot
 (sparrow_tukey_plot <- ggplot(tukey_results, 
@@ -260,6 +262,8 @@ sparrow_summary <- sparrow_long %>%
        title = "Tukey HSD Test with 95% confidence level") +        # Add plot title
   theme_bw(base_size = 12))                                         # Apply a clean theme
 ```
+
+<center><img src="plots/imp_tukey.png" alt="Img" style="width: 300;"/></center>
 
 ---
 
