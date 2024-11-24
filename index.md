@@ -125,9 +125,7 @@ print(sparrow)
 view(sparrow)
 ```
 
-R requires data to be in long format for data analysis, where the dataset is arranged with each row representing an oberservation and each column representing a variable. We can do this using the `pivot_longer()` function where `sparrow` refers to the data frame, `cols = c(Urban, Forest, Farmland)` refers to the columns we want to gather into a single column, `names_to = "Habitat"` refers to the name of the new column we are creating and `values_to = "Abundance"` refers to the name of next new column which stores the values of the new gathered column.
-
-the first object in the bracket is the data frame (`sparrow`), the second is the , the creating (`habitat`) 
+R requires data to be in long format for data analysis, where the dataset is arranged with each row representing an oberservation and each column representing a variable. We can do this using the `pivot_longer()` function, where `sparrow` refers to the data frame; `cols = c(Urban, Forest, Farmland)` refers to the columns we want to gather into a single column; `names_to = "Habitat"` refers to the name of the new column we are creating; and `values_to = "Abundance"` refers to the name of next new column which stores the values of the new gathered column.
 
 ```r
 # Convert data frame to long form
