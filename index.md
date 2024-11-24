@@ -131,14 +131,6 @@ R requires data to be in long format for data analysis, where the dataset is arr
 # Convert data frame to long form
 sparrow_long <- pivot_longer(sparrow, cols = c(Urban, Forest, Farmland), names_to = "Habitat", values_to = "Abundance")
 ```
-
-We can check the class of each object by using the `str()` function.
-
-```r
-# Check variables
-str(sparrow_long)
-```
-
 ---
 
 <a name="section4"></a>
