@@ -116,7 +116,7 @@ Next, we need to import our data which can be done by directly typing the code b
 sparrow <- read_csv("data/sparrow_data.csv")
 ```
 
-We can check the first 6 rows of data by using the `head()` function. Or to see the whole dataset you can use the `print()` function or the `view` function.
+We can check the first 6 rows of data and the column headers by using the `head()` function. Or to see the whole dataset you can use the `print()` function or the `view()` function.
 
 ```r
 # Check the data
@@ -125,11 +125,13 @@ print(sparrow)
 view(sparrow)
 ```
 
-R requires data to be in long format, where the dataset is arranged with row representing an oberservation and each column representing a variable.
+R requires data to be in long format for data analysis, where the dataset is arranged with each row representing an oberservation and each column representing a variable. We can do this using the `pivot_longer()` function where `sparrow` refers to the data frame, `cols = c(Urban, Forest, Farmland)` refers to the columns we want to gather into a single column, `names_to = "Habitat"` refers to the name of the new column we are creating and `values_to = "Abundance"` refers to the name of next new column which stores the values of the new gathered column.
+
+the first object in the bracket is the data frame (`sparrow`), the second is the , the creating (`habitat`) 
 
 ```r
 # Convert data frame to long form
-sparrow_long <- gather(sparrow, Habitat, Abundance, c(Urban, Forest, Farmland))
+sparrow_long <- pivot_longer(sparrow, cols = c(Urban, Forest, Farmland), names_to = "Habitat", values_to = "Abundance")
 ```
 
 We can check the class of each object by using the `str()` function.
