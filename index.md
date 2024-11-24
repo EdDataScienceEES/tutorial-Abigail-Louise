@@ -148,6 +148,8 @@ It is good practice to visualise your data before undertaking any data analysis.
    theme_bw())                                                                # Apply a clean theme
 ```
 
+__Tip:__ By putting the whole code for a plot in brackets `()` the plot will appear in your bottom right window without you having to call them!
+
 <center><img src="plots/data_vis_boxplot.png" alt="Img" style="width: 300;"/></center>
 
 ---
