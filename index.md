@@ -219,7 +219,7 @@ plot(sparrow_anova, which = 1)
 
 <center><img src="plots/res_vs_fix.png" alt="Img" style="width: 300;"/></center>
 
-From these results we may think our <a href="hypotheses"> hypotheses </a> are true. However, 
+From these results we may think our <a href="hypotheses">hypotheses</a> are true. However, 
 
 ---
 
