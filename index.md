@@ -19,7 +19,7 @@ __In this tutorial you will learn how to:__
 - Visualise the data and outputs
 - Report findings
 
-<mark> __Please Note:__ This tutorial assumes a basic understanding on how to use RStudio and produce plots. </mark>
+<mark> **Please Note:** This tutorial assumes a basic understanding on how to use RStudio and produce plots. </mark>
 
 ---
 
