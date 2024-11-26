@@ -72,9 +72,7 @@ __Examples of other post-hoc tests:__
 
 ## 2. Research question and hypothesis
 
-Before you begin doing any statistical analysis it is important to set a __research question__. A research question is a specific question that guides a research project. It serves as a foundation for the research design and influences what data collection and analysis you will carry out.
-
-Our research question:
+Before you begin doing any statistical analysis it is important to set a __research question__. A research question is a specific question that guides a research project. It serves as a foundation for the research design and influences what data collection and analysis you will carry out. Our research question for this tutorial is:
 
 #### How does house sparrow (*Passer domesticus*) abundance differ between habitats?
 
@@ -85,9 +83,13 @@ The house sparrow (*Passer domesticus*) is one of the most widespread bird speci
 
 Understanding how the house sparrow abundance varies between different habitats can provide insights into the ecological requirements and threats this species faces. This research can identify areas where the house sparrow abundance is low to inform conservation efforts.
 
-After deciding on a research question you should think about possible outcomes and what you expect to see from your research which will form your __hypotheses__.
+After deciding on a research question you should think about what you expect to see from your research and why which will form your __hypothesis__.
 
+A hypothesis is a formal, testable statement about the expected relationship between variables or conditions. It represents your initial edducated guess about the outcome of the research based on prior knowledge. 
 
+For example you may think urban areas will have higher house sparrow abundance due to the availability of food from human activity, such as discarded scraps and bird feeders in gardens. Therefore, your hypothesis could be:
+
+#### There will be a higher abundance of the house sparrow (*Passer domesticus*) in urban habitats compared to farmland and forests.
 
 You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-Abigail-Louise.git" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
 
