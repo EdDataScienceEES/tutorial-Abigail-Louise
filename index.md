@@ -47,7 +47,9 @@ __In this tutorial you will learn how to:__
 
 __ANOVA:__
 
-An ANOVA which stands for "ANalysis Of VAriance" is a statistical method used to compare the means across three or more groups. It considers the variability both within each group and between them to determine statistical significance.
+An ANOVA which stands for "ANalysis Of VAriance" is a statistical method used to compare the means across three or more independent groups. It considers the variability both within each group and between them to determine statistical significance.
+
+When to use ANOVA?
 
 __Why should you carry out a post-hoc test?__
 
@@ -282,6 +284,10 @@ sparrow_summary <- sparrow_long %>%
 ```
 
 <center><img src="plots/imp_tukey.png" alt="Img" style="width: 300;"/></center>
+
+
+How to export images?
+
 
 ---
 
