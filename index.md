@@ -77,9 +77,10 @@ __Examples of other post-hoc tests:__
 Before you begin doing any statistical analysis it is important to set a __research question__. A research question is a specific question that guides a research project. It serves as a foundation for the research design and influences what data collection and analysis you will carry out. Our research question for this tutorial is:
 
 #### How does house sparrow (*Passer domesticus*) abundance differ between habitats?
-<center><img src="images/sparrow.png" alt="Img", height = 400></center>
-<sub>Image: https://www.pexels.com/photo/house-sparrow-on-a-tree-branch-in-spring-nature-29423562/</sub>
 
+<center><img src="images/sparrow.png" alt="Img", height = 400></center>
+
+<sub>Image: https://www.pexels.com/photo/house-sparrow-on-a-tree-branch-in-spring-nature-29423562/</sub>
 
 The house sparrow (*Passer domesticus*) is one of the most widespread bird species globally and is known for their close association with human-modified environments. Despite their adaptability, monitoring suggests a severe decline of 71% between 1977 and 2008 in the UK (RSPB, n.d.). 
 
