@@ -6,7 +6,7 @@
 
 ---
 
-This tutorial is a part 2 to the <a href="https://ourcodingclub.github.io/tutorials/anova/">ANOVA from A to (XY)Z</a> tutorial. We will recap how to carry out a one-way ANOVA with a different dataset and further analyse our ANOVA results by conducting a post-hoc test. In this tutorial, the post-hoc test covered will be Tukey's test.
+This tutorial is a part 2 to the <a href="https://ourcodingclub.github.io/tutorials/anova/">ANOVA from A to (XY)Z</a> tutorial. In this continuation, we will recap how to conduct a one-way ANOVA using a different dataset and delve deeper into analysing our ANOVA results by performing a post-hoc test. Specifically, we will explore Tukey's test as the post-hoc method for further analysis.
 
 Often in ecological and environmental research you will need to compare groups of data to see if there is a difference between the groups. This could be comparing plant growth between different soil types or water quality in different rivers for example. In this tutorial we will look at the difference in house sparrow (*Passer domesticus*) abundance between different habitats.
 
