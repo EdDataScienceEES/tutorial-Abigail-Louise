@@ -251,7 +251,7 @@ __What each column means:__
 - Lower confidence interval (`lwr` and `upr`): The lower and upper bounds of the confidence interval for the difference in means - if the interval includes 0, there is no significant difference between the groups
 - Adjusted p-value (`p adj`): The p-value for each comparison adjusted for multiple testing using Tukey's method -a p-value less than your specified threshold indicates a statistically significant difference between the groups
 
-To convert results into a better presented format of the summary table you can use the broom package:
+<mark> Tip: To convert results into a better presented format of the summary table you can use the broom package: </mark>
 
 ```r
 (tukey_results <- broom::tidy(sparrow_test)) # Creating tidy data frame using broom
