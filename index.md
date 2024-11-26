@@ -78,7 +78,7 @@ Before you begin doing any statistical analysis it is important to set a __resea
 
 #### How does house sparrow (*Passer domesticus*) abundance differ between habitats?
 
-<center><img src="images/sparrow.png" alt="Img", height = 400></center>
+<center><img src="images/sparrow.png" alt="Img"></center>
 
 <sub>Image: https://www.pexels.com/photo/house-sparrow-on-a-tree-branch-in-spring-nature-29423562/</sub>
 
