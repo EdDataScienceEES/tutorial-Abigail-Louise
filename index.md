@@ -243,23 +243,25 @@ __What each column means:__
 - Lower confidence interval (`lwr` and `upr`): The lower and upper bounds of the confidence interval for the difference in means - if the interval includes 0, there is no significant difference between the groups
 - Adjusted p-value (`p adj`): The p-value for each comparison adjusted for multiple testing using Tukey's method -a p-value less than your specified threshold indicates a statistically significant difference between the groups
 
-We can see from the p-values 
-
-To convert results into a better presented format of the summary table you can use the broom package.
+To convert results into a better presented format of the summary table you can use the broom package:
 
 ```r
 (tukey_results <- broom::tidy(sparrow_test)) # Creating tidy data frame using broom
 ```
 
-
 <center><img src="outputs/tidy_tukey_summary.png" alt="Img" width = "700"/></center>
 
+We can see from the p-values (if our significance level is 0.05), the forest and farmland habitats show a significant differences in abundance as the p-value is less than 0.05, and so do the urban and forest habitats. However, the urban and farmland habitats have a p-value more than 0.05 so they do not appear to be significantly different. 
+
+Another way to view the results is by plotting them:
 ```r
 # Plotting Tukey's test result
 plot(sparrow_test)
 ```
 
 <center><img src="plots/tukey.png" alt="Img"/></center>
+
+We can see that the urban and farmland group comparison confidence for the mean value between the two groups contain zero, which indicates that there is not a statistically significant difference between abundances. For the other two group comparisons the confidence intervals do not contain zero and therefore are significantly different which is consistent with our p-values.
 
 ---
 
