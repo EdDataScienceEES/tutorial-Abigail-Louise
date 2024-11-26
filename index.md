@@ -6,6 +6,23 @@
 
 ---
 
+This tutorial is a part 2 to the <a href="https://ourcodingclub.github.io/tutorials/anova/">ANOVA from A to (XY)Z</a> tutorial. We will recap how to carry out a one-way ANOVA with a different dataset and further analyse our ANOVA results by conducting a post-hoc test. In this tutorial, the post-hoc test covered will be Tukey's test.
+
+Often in ecological and environmental research you will need to compare groups of data to see if there is a difference between the groups. This could be comparing plant growth between different soil types or water quality in different rivers for example. In this tutorial we will look at the difference in house sparrow (*Passer domesticus*) abundance between different habitats.
+
+__In this tutorial you will learn how to:__
+- Load and prepare data for analysis in RStudio
+- Understand when to use/the purpose of a one-way ANOVA and Tukey's test
+- Perform a one-way ANOVA and Tukey's test
+- Interpret the outputs from these tests
+- Recognise assumptions of these tests
+- Visualise the data and outputs
+- Report findings
+
+> Please note: This tutorial assumes a basic understanding on how to use RStudio and produce plots.
+
+---
+
 ### Tutorial Steps:
 
 #### <a href="#section1"> 1) What is ANOVA and Tukey's Test?</a>
@@ -21,23 +38,6 @@
 #### <a href="#section6"> 6) Running Tukey's HSD</a>
 
 #### <a href="#section7"> 7) Communicating model results</a>
-
----
-
-Often in ecological and environmental research you will need to compare groups of data to see if there is a difference between the groups. This could be comparing plant growth between different soil types or water quality in different rivers for example. In this tutorial we will look at the difference in house sparrow (*Passer domesticus*) abundance between different habitats.
-
-You may have used a T-test before which compares the means across two groups to see if there is a statistically significant difference. If you want to compare more than two groups you can use a one-way ANOVA. To further analyse the results of the ANOVA you can perform a post-hoc test, such as Tukey's test which is covered in this tutorial. 
-
-__In this tutorial you will learn how to:__
-- Load and prepare data for analysis in RStudio
-- Understand when to use/the purpose of a one-way ANOVA and Tukey's test
-- Perform a one-way ANOVA and Tukey's test
-- Interpret the outputs from these tests
-- Recognise assumptions of these tests
-- Visualise the data and outputs
-- Report findings
-
-> Please note: This tutorial assumes a basic understanding on how to use RStudio and produce plots.
 
 ---
 
