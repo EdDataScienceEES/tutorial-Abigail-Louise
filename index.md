@@ -325,13 +325,7 @@ Everything below this is footer material - text and links that appears at the en
 
 #### <a href="INSERT_SURVEY_LINK" target="_blank">We would love to hear your feedback on the tutorial, whether you did it in the classroom or online!</a>
 
-<ul class="social-icons">
-	<li>
-		<h3>
-			<a href="https://twitter.com/our_codingclub" target="_blank">&nbsp;Follow our coding adventures on Twitter! <i class="fa fa-twitter"></i></a>
-		</h3>
-	</li>
-</ul>
+#### Stay up to date and learn about our newest resources by following us on <a href="https://twitter.com/our_codingclub" target="_blank">Twitter</a>.
 
 ### &nbsp;&nbsp;Subscribe to our mailing list:
 <div class="container">
