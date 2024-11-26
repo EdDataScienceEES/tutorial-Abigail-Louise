@@ -176,7 +176,7 @@ hist(sparrow_anova$residuals, breaks = 30)  # Plotting histogram of residuals an
 # The residuals do not look normally distributed
 ```
 
-<center><img src="plots/his_res.png" alt="Img" style="width: 350;"/></center>
+<center><img src="plots/hist_res.png" alt="Img" style="width: 350;"/></center>
 
 ```r
 plot(sparrow_anova, which = 2) # Plotting Q-Q plot
