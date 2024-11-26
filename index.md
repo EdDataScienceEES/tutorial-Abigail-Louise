@@ -270,7 +270,9 @@ plot(sparrow_test)
 
 <center><img src="plots/tukey.png" alt="Img"/></center>
 
-We can see that the urban and farmland group comparison confidence for the mean value between the two groups contain zero, which indicates that there is not a statistically significant difference between abundances. For the other two group comparisons the confidence intervals do not contain zero and therefore are significantly different which is consistent with our p-values.
+To read this plot you are looking to see if the confidence intervals cross over the zero line. If they cross zero this __is not__ statistically significant and if they do not this __is__ statistically significant.
+
+The comparison of mean values between the urban and farmland groups shows that the confidence interval includes zero, indicating no statistically significant difference in abundances between these groups. In contrast, the confidence intervals for the other two group comparisons do not include zero, indicating statistically significant differences. These results are consistent with to our corresponding p-values.
 
 ---
 
