@@ -234,6 +234,12 @@ From these results we may think our <a href="hypotheses">hypotheses</a> are true
 This is the output which should appear in the console:
 <center><img src="outputs/tukey_summary_p.png" alt="Img" width = "400"/></center>
 
+What each column means:
+- The group comparisons (`$Habitat`): The names of the two groups being compared
+- Difference (`diff`): The difference between the means of the two groups - positive values indicating that the first group has a higher mean than the second, while negative values indicate the opposite
+- Lower confidence interval (`lwr` and `upr`): The lower and upper bounds of the confidence interval for the difference in means - if the interval includes 0, there is no significant difference between the groups
+- Adjusted p-value (`p adj`): The p-value for each comparison adjusted for multiple testing using Tukey's method -a p-value less than your specified threshold indicates a statistically significant difference between the groups
+
 To convert results into a better presented format of the summary table you can use the broom package.
 
 ```r
