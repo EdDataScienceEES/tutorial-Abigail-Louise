@@ -39,8 +39,6 @@ __In this tutorial you will learn how to:__
 
 > Please note: This tutorial assumes a basic understanding on how to use RStudio and produce plots.
 
-You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-Abigail-Louise.git" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
-
 ---
 
 <a name="section1"></a>
@@ -74,8 +72,24 @@ __Examples of other post-hoc tests:__
 
 ## 2. Research question and hypothesis
 
+Before you begin doing any statistical analysis it is important to set a __research question__. A research question is a specific question that guides a research project. It serves as a foundation for the research design and influences what data collection and analysis you will carry out.
+
+Our research question:
+
+#### How does house sparrow (*Passer domesticus*) abundance differ between habitats?
+
 <center><img src="images/sparrow.png" alt="Img", height = 400></center>
 <sub>Image: https://www.pexels.com/photo/house-sparrow-on-a-tree-branch-in-spring-nature-29423562/</sub>
+
+The house sparrow (*Passer domesticus*) is one of the most widespread bird species globally and is known for their close association with human-modified environments. Despite their adaptability, monitoring suggests a severe decline of 71% between 1977 and 2008 in the UK (RSPB, n.d.). 
+
+Understanding how the house sparrow abundance varies between different habitats can provide insights into the ecological requirements and threats this species faces. This research can identify areas where the house sparrow abundance is low to inform conservation efforts.
+
+After deciding on a research question you should think about possible outcomes and what you expect to see from your research which will form your __hypotheses__.
+
+
+
+You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-Abigail-Louise.git" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
 
 ---
 
@@ -283,6 +297,9 @@ This is the end of the tutorial. Summarise what the student has learned, possibl
 ##### - how to generate fake bivariate data
 ##### - how to create a scatterplot in ggplot2
 ##### - some of the different plot methods in ggplot2
+
+__References:__
+RSPB (n.d.). www.rspb.org.uk. Available at: https://www.rspb.org.uk/birds-and-wildlife/house-sparrow. (accessed 26/11/24)
 
 We can also provide some useful links, include a contact form and a way to send feedback.
 
