@@ -37,7 +37,7 @@ __In this tutorial you will learn how to:__
 - Visualise the data and outputs
 - Report findings
 
-Please note: This tutorial assumes a basic understanding on how to use RStudio and produce plots.
+> Please note: This tutorial assumes a basic understanding on how to use RStudio and produce plots.
 
 You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-Abigail-Louise.git" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
 
@@ -148,7 +148,7 @@ It is good practice to visualise your data before undertaking any data analysis.
    theme_bw())                                                                # Apply a clean theme
 ```
 
-__Tip:__ By putting the whole code for a plot in brackets `()` the plot will appear in your bottom right window without you having to call them!
+> __Tip:__ By putting the whole code for a plot in brackets `()` the plot will appear in your bottom right window without you having to call them!
 
 <center><img src="plots/data_vis_boxplot.png" alt="Img" style="width: 300;"/></center>
 
