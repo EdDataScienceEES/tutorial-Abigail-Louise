@@ -175,7 +175,7 @@ It is good practice to visualise your data before undertaking any data analysis.
 
 <mark> __Tip:__ By putting the whole code for a plot in brackets `()` the plot will appear in your bottom right window without you having to call them! </mark>
 
-<center><img src="plots/data_vis_boxplot.png" alt="Img" style="width: 300;"/></center>
+<center><img src="plots/data_vis_boxplot.png" alt="Img" /></center>
 
 ---
 
@@ -201,7 +201,7 @@ hist(sparrow_anova$residuals, breaks = 30)  # Plotting histogram of residuals an
 # The residuals do not look normally distributed
 ```
 
-<center><img src="plots/hist_res.png" alt="Img" style="width: 350;"/></center>
+<center><img src="plots/hist_res.png" alt="Img" /></center>
 
 ```r
 plot(sparrow_anova, which = 2) # Plotting Q-Q plot
@@ -209,7 +209,7 @@ plot(sparrow_anova, which = 2) # Plotting Q-Q plot
 # Or the outliers do not follow a normal distribution (by looking at the histogram it appears to be the this)
 ```
 
-<center><img src="plots/Q-Q_res.png" alt="Img" style="width: 350;"/></center>
+<center><img src="plots/Q-Q_res.png" alt="Img" /></center>
 
 ```r
 # Checking for homoscedasticity
@@ -217,7 +217,7 @@ plot(sparrow_anova, which = 1)
 # The red line is flat against grey dashed line which is what we want to see
 ```
 
-<center><img src="plots/res_vs_fix.png" alt="Img" style="width: 300;"/></center>
+<center><img src="plots/res_vs_fix.png" alt="Img"/></center>
 
 From these results we may think our <a href="hypotheses">hypotheses</a> are true. However, 
 
@@ -232,7 +232,7 @@ From these results we may think our <a href="hypotheses">hypotheses</a> are true
 (sparrow_test <- TukeyHSD(sparrow_anova, conf.level=.95))
 ```
 This is the output which should appear in the console:
-<center><img src="outputs/tukey_summary_p.png" alt="Img" style="width: 100;"/></center>
+<center><img src="outputs/tukey_summary_p.png" alt="Img" width = "400"/></center>
 
 To convert results into a better presented format of the summary table you can use the broom package.
 
@@ -245,7 +245,7 @@ To convert results into a better presented format of the summary table you can u
 plot(sparrow_test)
 ```
 
-<center><img src="plots/tukey.png" alt="Img" style="width: 300;"/></center>
+<center><img src="plots/tukey.png" alt="Img"/></center>
 
 ---
 
@@ -278,7 +278,7 @@ sparrow_summary <- sparrow_long %>%
   theme(legend.position = "none"))                                     # Removing legend
 ```
 
-<center><img src="plots/barplot.png" alt="Img" style="width: 300;"/></center>
+<center><img src="plots/barplot.png" alt="Img"/></center>
 
 ```r
 # Improve Tukey's test result plot
@@ -294,7 +294,7 @@ sparrow_summary <- sparrow_long %>%
   theme_bw(base_size = 12))                                         # Apply a clean theme
 ```
 
-<center><img src="plots/imp_tukey.png" alt="Img" style="width: 300;"/></center>
+<center><img src="plots/imp_tukey.png" alt="Img"/></center>
 
 
 How to export images?
