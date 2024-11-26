@@ -336,29 +336,17 @@ __After completion this tutorial you should be able to:__
 - Visualise the data and outputs
 - Report findings
 
-This is the end of the tutorial. Summarise what the student has learned, possibly even with a list of learning outcomes. In this tutorial we learned:
-
-##### - how to generate fake bivariate data
-##### - how to create a scatterplot in ggplot2
-##### - some of the different plot methods in ggplot2
-
 __References:__
 RSPB (n.d.). www.rspb.org.uk. Available at: https://www.rspb.org.uk/birds-and-wildlife/house-sparrow. (accessed 26/11/24)
 
-We can also provide some useful links, include a contact form and a way to send feedback.
-
-For more on `ggplot2`, read the official <a href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf" target="_blank">ggplot2 cheatsheet</a>.
-
-Everything below this is footer material - text and links that appears at the end of all of your tutorials.
-
 <hr>
 <hr>
 
-#### Check out our <a href="https://ourcodingclub.github.io/links/" target="_blank">Useful links</a> page where you can find loads of guides and cheatsheets.
+#### Useful links:
+- Two articles from Statology: <a href="https://www.statology.org/one-way-anova/" target="_blank">One-way ANOVA: Definition, formula and example</a> and <a href="https://www.statology.org/tukey-test-r/" target="_blank">How to perform Tukey's test in R</a>
+- Check out our <a href="https://ourcodingclub.github.io/links/" target="_blank">Useful links</a> page where you can find loads of guides and cheatsheets.
 
 #### If you have any questions about completing this tutorial, please contact us on ourcodingclub@gmail.com
-
-#### <a href="INSERT_SURVEY_LINK" target="_blank">We would love to hear your feedback on the tutorial, whether you did it in the classroom or online!</a>
 
 #### Stay up to date and learn about our newest resources by following us on <a href="https://twitter.com/our_codingclub" target="_blank">Twitter</a>.
 
