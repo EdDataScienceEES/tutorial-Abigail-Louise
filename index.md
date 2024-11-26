@@ -231,6 +231,8 @@ From these results we may think our <a href="hypotheses">hypotheses</a> are true
 # Running Tukey's HSD post-hoc test on the anova output and setting the confidence level to 95%
 (sparrow_test <- TukeyHSD(sparrow_anova, conf.level=.95))
 ```
+This is the output which should appear in the console:
+<center><img src="outputs/tukey_summary_p.png" alt="Img" style="width: 100;"/></center>
 
 To convert results into a better presented format of the summary table you can use the broom package.
 
