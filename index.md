@@ -96,6 +96,10 @@ For example you may think urban areas will have higher house sparrow abundance d
 
 #### There will be a higher abundance of the house sparrow (*Passer domesticus*) in urban habitats compared to farmland and forests.
 
+You can make serveral hypotheses, as you may also want make a distinction between the farmland and forests habitat. You may assume house sparrows would prefer farmland over forests due to the their dietary preference of seeds and grains, which are more abundant in agricultural areas. There may also be less competition for resources in farmland compared to forests, which have a greater number of species using the same resources. Therefore, a second hypothesis could be:
+
+#### There will be a higher abundance of house sparrow (*Passer domesticus*) in farmland habitats compared to forests.
+
 ---
 
 <a name="section3"></a>
@@ -212,6 +216,8 @@ plot(sparrow_anova, which = 1)
 ```
 
 <center><img src="plots/res_vs_fix.png" alt="Img" style="width: 300;"/></center>
+
+From these results we may think our hypotheses are true. However, 
 
 ---
 
