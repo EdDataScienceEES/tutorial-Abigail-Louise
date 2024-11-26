@@ -191,7 +191,11 @@ sparrow_anova <- aov(Abundance ~ Habitat, data = sparrow_long)
 summary(sparrow_anova)
 ```
 
+Our significance level for this tutorial is 0.05. Why? 
 
+This is widely adopted standard in statistics which represents the threshold for deciding significance. The significance level is the probability of making a type I error (false positive), so at 0.05 there is a 5% risk of concluding that there is an effect/difference when there is none. 
+
+Output in console:
 <center><img src="outputs/anova_summary.png" alt="Img" width = "500"/></center>
 
 __Checking assumptions:__
@@ -230,11 +234,15 @@ From these results we may think our <a href="hypotheses">hypotheses</a> are true
 
 ## 6) Running Tukey's HSD
 
+Let's perform Tukey's test using the `TukeyHSD()` function!
+
+We will set our confidence intervals to 95% as this is directly tied to the significance level (calculated by 1 - 0.05).
+
 ```r
 # Running Tukey's HSD post-hoc test on the anova output and setting the confidence level to 95%
 (sparrow_test <- TukeyHSD(sparrow_anova, conf.level=.95))
 ```
-This is the output which should appear in the console:
+Output in console:
 <center><img src="outputs/tukey_summary.png" alt="Img" width = "500"/></center>
 
 __What each column means:__
@@ -249,6 +257,7 @@ To convert results into a better presented format of the summary table you can u
 (tukey_results <- broom::tidy(sparrow_test)) # Creating tidy data frame using broom
 ```
 
+Output in console:
 <center><img src="outputs/tidy_tukey_summary.png" alt="Img" width = "700"/></center>
 
 We can see from the p-values (if our significance level is 0.05), the forest and farmland habitats show a significant differences in abundance as the p-value is less than 0.05, and so do the urban and forest habitats. However, the urban and farmland habitats have a p-value more than 0.05 so they do not appear to be significantly different. 
