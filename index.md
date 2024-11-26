@@ -21,6 +21,8 @@ __In this tutorial you will learn how to:__
 
 <mark> **Please Note:** This tutorial assumes a basic understanding on how to use RStudio and produce plots. </mark>
 
+You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-Abigail-Louise.git" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
+
 ---
 
 ### Tutorial Steps:
@@ -93,8 +95,6 @@ A hypothesis is a formal, testable statement about the expected relationship bet
 For example you may think urban areas will have higher house sparrow abundance due to the availability of food from human activity, such as discarded scraps and bird feeders in gardens. Therefore, your hypothesis could be:
 
 #### There will be a higher abundance of the house sparrow (*Passer domesticus*) in urban habitats compared to farmland and forests.
-
-You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-Abigail-Louise.git" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
 
 ---
 
