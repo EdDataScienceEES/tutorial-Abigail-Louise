@@ -94,6 +94,8 @@ A hypothesis is a formal, testable statement about the expected relationship bet
 
 For example you may think urban areas will have higher house sparrow abundance due to the availability of food from human activity, such as discarded scraps and bird feeders in gardens. Therefore, your hypothesis could be:
 
+<a name="hypotheses"></a>
+
 #### There will be a higher abundance of the house sparrow (*Passer domesticus*) in urban habitats compared to farmland and forests.
 
 You can make serveral hypotheses, as you may also want make a distinction between the farmland and forests habitat. You may assume house sparrows would prefer farmland over forests due to the their dietary preference of seeds and grains, which are more abundant in agricultural areas. There may also be less competition for resources in farmland compared to forests, which have a greater number of species using the same resources. Therefore, a second hypothesis could be:
@@ -217,7 +219,7 @@ plot(sparrow_anova, which = 1)
 
 <center><img src="plots/res_vs_fix.png" alt="Img" style="width: 300;"/></center>
 
-From these results we may think our hypotheses are true. However, 
+From these results we may think our <a href="hypotheses"> hypotheses </a> are true. However, 
 
 ---
 
