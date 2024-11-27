@@ -19,9 +19,9 @@ __In this tutorial you will learn how to:__
 - Visualise the data and outputs
 - Report findings
 
-<mark> __Please Note:__ This tutorial assumes a basic understanding on how to use RStudio and produce plots. </mark>
+<mark> Please Note: This tutorial assumes a basic understanding on how to use RStudio and produce plots. </mark>
 
-You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-Abigail-Louise.git" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
+> You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-Abigail-Louise.git" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
 
 ---
 
@@ -251,7 +251,7 @@ __What each column means:__
 - Lower confidence interval (`lwr` and `upr`): The lower and upper bounds of the confidence interval for the difference in means - if the interval includes 0, there is no significant difference between the groups
 - Adjusted p-value (`p adj`): The p-value for each comparison adjusted for multiple testing using Tukey's method -a p-value less than your specified threshold indicates a statistically significant difference between the groups
 
-<mark> __Tip:__ To convert results into a better presented format of the summary table you can use the broom package: </mark>
+<mark> Tip: To convert results into a better presented format of the summary table you can use the broom package: </mark>
 
 ```r
 (tukey_results <- broom::tidy(sparrow_test)) # Creating tidy data frame using broom
