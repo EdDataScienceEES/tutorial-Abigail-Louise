@@ -24,13 +24,13 @@ getwd()
 # Load packages
 library(tidyverse)
 library(broom)
+library(gridExtra)
 
 # Import data
-sparrow <- read_csv("data/sparrow_data.csv")
+sparrow <- read_csv("data/house_sparrow.csv")
 
 # Check the data
 head(sparrow)
-print(sparrow)
 view(sparrow)
 
 
@@ -41,6 +41,28 @@ sparrow_long <- pivot_longer(sparrow, cols = c(Urban, Forest, Farmland), names_t
 
 
 # 3) Data visualisation ----
+
+# Visualising data with histograms to check for normal distribution for each habitat type
+# Urban
+(sparrow_urban <- ggplot(sparrow, aes(x = Urban)) +
+   geom_histogram(bins = 15, 
+                  fill = "royalblue") +
+  theme_test())
+
+# Farmland
+(sparrow_farmland <- ggplot(sparrow, aes(x = Farmland)) +
+    geom_histogram(bins = 15, 
+                   fill = "gold") +
+    theme_test())
+
+# Forest
+(sparrow_forest <- ggplot(sparrow, aes(x = Forest)) +
+    geom_histogram(bins = 15,
+                   fill = "springgreen3") +
+    theme_test())
+
+# Arranging plots in a single panel
+grid.arrange(sparrow_urban, sparrow_farmland, sparrow_forest, nrow = 1)
 
 # Visualising data with a boxplot
 (sparrow_boxplot <- ggplot(sparrow_long,                                      
@@ -98,28 +120,27 @@ sparrow_summary <- sparrow_long %>%
 
 # Creating bar plot of sparrow summary
 (sparrow_barplot <- ggplot(data = sparrow_summary) +
-  geom_bar(aes(x = Habitat, y = average_abundance, fill = Habitat),    # Creating bar plot with habitat on the x axis and average abundance on the y
-           stat = "identity", colour = "black") +                      # Setting stat to identity uses average_abundance instead of count and adding black borders to bars
-  geom_errorbar(aes(x = Habitat, ymin = average_abundance - SE,        # Adding error bars to represent standard error
-                ymax = average_abundance + SE), width = 0.25,          # Setting width of the error bars to 0.25 for better visibility
-                colour = "black", linewidth = 0.6) +                   # Setting colour and thickness of error bars
-  scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) + # Setting bar colours to colourblind friendly colours
-  labs(x = "\n Habitat", y = "Average Abundance \n") +                 # Adding axis titles (\n leaves a space between plot and title)
-  theme_test() +                                                       # Apply a clean theme
-  theme(legend.position = "none"))                                     # Removing legend
+    geom_bar(aes(x = Habitat, y = average_abundance, fill = Habitat),    # Creating bar plot with habitat on the x axis and average abundance on the y
+             stat = "identity", colour = "black") +                      # Setting stat to identity uses average_abundance instead of count and adding black borders to bars
+    geom_errorbar(aes(x = Habitat, ymin = average_abundance - SE,        # Adding error bars to represent standard error
+                      ymax = average_abundance + SE), width = 0.25,          # Setting width of the error bars to 0.25 for better visibility
+                  colour = "black", linewidth = 0.6) +                   # Setting colour and thickness of error bars
+    scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) + # Setting bar colours to colourblind friendly colours
+    labs(x = "\n Habitat", y = "Average Abundance \n") +                 # Adding axis titles (\n leaves a space between plot and title)
+    theme_test() +                                                       # Apply a clean theme
+    theme(legend.position = "none"))                                     # Removing legend
 
 
 # Improve Tukey's test result plot
 (sparrow_tukey_plot <- ggplot(tukey_results, 
-                              aes(x = contrast, y = estimate)) +    # Set x axis to pairwise comparisons and y to mean differences
-  geom_point(color = "black", size = 2) +                           # Add points for mean differences and increase size
-  geom_errorbar(aes(ymin = conf.low, ymax = conf.high),             # Add error bars showing confidence intervals
-                width = 0.2, color = "black") +                     # Add error bars for confidence intervals
-  geom_hline(yintercept = 0, linetype = "dashed", color = "blue") + # Add a reference line at 0 and highlight with blue colour
-  coord_flip() +                                                    # Flip coordinates for horizontal orientation
-  labs(x = "Pairwise Comparisons", y = "Mean Difference",           # Add informative axis titles
-       title = "Tukey HSD Test with 95% confidence level") +        # Add plot title
-  theme_bw(base_size = 12))                                         # Apply a clean theme
-
+                              aes(x = contrast, y = estimate)) +      # Set x axis to pairwise comparisons and y to mean differences
+    geom_point(color = "black", size = 2) +                           # Add points for mean differences and increase size
+    geom_errorbar(aes(ymin = conf.low, ymax = conf.high),             # Add error bars showing confidence intervals
+                  width = 0.2, color = "black") +                     # Add error bars for confidence intervals
+    geom_hline(yintercept = 0, linetype = "dashed", color = "blue") + # Add a reference line at 0 and highlight with blue colour
+    coord_flip() +                                                    # Flip coordinates for horizontal orientation
+    labs(x = "Pairwise Comparisons", y = "Mean Difference",           # Add informative axis titles
+         title = "Tukey HSD Test with 95% confidence level") +        # Add plot title
+    theme_bw(base_size = 12))                                         # Apply a clean theme
 
 
