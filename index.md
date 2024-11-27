@@ -110,11 +110,25 @@ You can make serveral hypotheses, as you may also want make a distinction betwee
 
 We will begin coding by opening `RStudio` and creating a new script by clicking on `File/ New File/ R Script` 
 
-It is good practice to start your script by giving it a title and stating who it was written by with a date. 
+It is good practice to start your script by giving it a __title__, stating __who__ it was written by with __contact details__ and the __date__. 
 
 ```r
 # ANOVA and Tukey's HSD Tutorial full script
-# Written by Abigail Haining (19/11/24)
+# Written by Abigail Haining
+# Email - s2317501@ed.ac.uk
+# 19/11/24
+```
+
+You can also add a __workflow__ which is a list of the main sections of your script to make it easier to navigate.
+
+```r
+# Workflow:
+# 1) Set working directory, load packages and import data
+# 2) Data manipulation
+# 3) Data visualisation
+# 4) Running a one-way ANOVA
+# 5) Running Tukey's HSD
+# 6) Communicating model results
 ```
 
 Next we will set the working directory and load required packages. Here we will load the `tidyverse` package, which includes many helpful packages for data manipulation and data visualisation, such as  `dplyr`, `tidyr`and`ggplot2`. We will also used the package `broom` for tidying model outputs.
