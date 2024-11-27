@@ -216,10 +216,16 @@ It is good practice to visualise your data before undertaking any data analysis.
 ```r
 # Visualising data with a boxplot
 (sparrow_boxplot <- ggplot(sparrow_long,                                      
-                           aes(x = Habitat, y = Abundance, fill = Habitat)) + # Setting x axis as habitat and y as abundance 
-   geom_boxplot() +                                                           # Adding data as a boxplot
-   scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) +       # Setting box colours to colourblind friendly colours
-   theme_bw())                                                                # Apply a clean theme
+                           aes(x = Habitat, y = Abundance, fill = Habitat)) +                   # Setting x axis as habitat and y as abundance 
+   geom_boxplot() +                                                                             # Adding data as a boxplot
+   scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) +                         # Setting box colours to corresponding habitat colours
+    labs(x = "\n Habitat", y = "Abundance \n",                                                  # Adding axis labels (\n leaves a space between plot and title) 
+      caption = "Fig. 2 - Boxplot showing the distribution of abundance across farmland, urban, 
+      and forest groups. The farmland and urban groups exhibit overlapping, while 
+      forest abundance is generally lower than that of the other two groups, n = 120") +        # Adding caption
+   theme_bw() +                                                                                 # Apply a clean theme
+   theme(legend.position = "none"))                                                             # Removing legend
+
 ```
 
 <mark> __Tip:__ By putting the whole code for a plot in brackets `()` the plot will appear in your bottom right window without you having to call them! </mark>
