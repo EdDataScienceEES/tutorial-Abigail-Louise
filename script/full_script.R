@@ -1,5 +1,7 @@
 # ANOVA and Tukey's HSD Tutorial full script
-# Written by Abigail Haining (19/11/24)
+# Written by Abigail Haining
+# Email - s2317501@ed.ac.uk
+# 19/11/24
 
 # Workflow:
 # 1) Set working directory, load packages and import data
