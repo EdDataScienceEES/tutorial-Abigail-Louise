@@ -179,6 +179,41 @@ sparrow_long <- pivot_longer(sparrow, cols = c(Urban, Forest, Farmland), names_t
 It is good practice to visualise your data before undertaking any data analysis.
 
 ```r
+# Visualising data with histograms to check for normal distribution for each habitat type
+# Urban
+(sparrow_urban <- ggplot(sparrow, aes(x = Urban)) + # Creating plot, specifying data and the column to use for x axis
+   geom_histogram(bins = 15,                        # Adding data as histogram with 15 intervals
+                  fill = "royalblue") +             # Adding colour responding to habitat
+   labs(x = "Abundance", y = "Frequency") +         # Adding x and y axis labels
+   theme_test())                                    # Apply a clean theme
+
+# Farmland
+(sparrow_farmland <- ggplot(sparrow, aes(x = Farmland)) + # Creating plot, specifying data and the column to use for x axis
+    geom_histogram(bins = 15,                             # Adding data as histogram with 15 intervals
+                   fill = "gold") +                       # Adding colour responding to habitat
+    labs(x = "Abundance", y = "Frequency") +              # Adding x and y axis labels
+    theme_test())                                         # Apply a clean theme
+
+# Forest
+(sparrow_forest <- ggplot(sparrow, aes(x = Forest)) + # Creating plot, specifying data and the column to use for x axis
+    geom_histogram(bins = 15,                         # Adding data as histogram with 15 intervals
+                   fill = "springgreen3") +           # Adding colour responding to habitat
+    labs(x = "Abundance", y = "Frequency") +          # Adding x and y axis labels
+    theme_test())                                     # Apply a clean theme
+```
+
+
+```r
+# Arranging plots in a single panel
+(grid.arrange(sparrow_urban, sparrow_farmland, sparrow_forest, nrow = 1,        # Creating panel of 3 plots on 1 row
+             bottom = textGrob("Fig. 1 - Response variable (Abundance) appears normally distributed across all groups (Habitats), n = 120", # Adding caption
+                               gp = gpar(fontsize = 10, fontface = "italic")))) # Specifying font size for caption and making it italic
+
+```
+
+<center><img src="plots/habitat_hist.png" alt="Img" width = "800"/></center>
+
+```r
 # Visualising data with a boxplot
 (sparrow_boxplot <- ggplot(sparrow_long,                                      
                            aes(x = Habitat, y = Abundance, fill = Habitat)) + # Setting x axis as habitat and y as abundance 
