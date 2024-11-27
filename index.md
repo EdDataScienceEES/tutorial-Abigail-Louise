@@ -19,9 +19,9 @@ __In this tutorial you will learn how to:__
 - Visualise the data and outputs
 - Report findings
 
-<mark> __Please Note:__ This tutorial assumes a basic understanding on how to use RStudio and produce plots. </mark>
+<mark> Please Note: This tutorial assumes a basic understanding on how to use RStudio and produce plots. </mark>
 
-You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-Abigail-Louise.git" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
+> You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-Abigail-Louise.git" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
 
 ---
 
@@ -110,11 +110,25 @@ You can make serveral hypotheses, as you may also want make a distinction betwee
 
 We will begin coding by opening `RStudio` and creating a new script by clicking on `File/ New File/ R Script` 
 
-It is good practice to start your script by giving it a title and stating who it was written by with a date. 
+It is good practice to start your script by giving it a __title__, stating __who__ it was written by with __contact details__ and the __date__. 
 
 ```r
 # ANOVA and Tukey's HSD Tutorial full script
-# Written by Abigail Haining (19/11/24)
+# Written by Abigail Haining
+# Email - s2317501@ed.ac.uk
+# 19/11/24
+```
+
+You can also add a __workflow__ which is a list of the main sections of your script to make it easier to navigate.
+
+```r
+# Workflow:
+# 1) Set working directory, load packages and import data
+# 2) Data manipulation
+# 3) Data visualisation
+# 4) Running a one-way ANOVA
+# 5) Running Tukey's HSD
+# 6) Communicating model results
 ```
 
 Next we will set the working directory and load required packages. Here we will load the `tidyverse` package, which includes many helpful packages for data manipulation and data visualisation, such as  `dplyr`, `tidyr`and`ggplot2`. We will also used the package `broom` for tidying model outputs.
@@ -251,7 +265,7 @@ __What each column means:__
 - Lower confidence interval (`lwr` and `upr`): The lower and upper bounds of the confidence interval for the difference in means - if the interval includes 0, there is no significant difference between the groups
 - Adjusted p-value (`p adj`): The p-value for each comparison adjusted for multiple testing using Tukey's method -a p-value less than your specified threshold indicates a statistically significant difference between the groups
 
-<mark> __Tip:__ To convert results into a better presented format of the summary table you can use the broom package: </mark>
+<mark> Tip: To convert results into a better presented format of the summary table you can use the broom package: </mark>
 
 ```r
 (tukey_results <- broom::tidy(sparrow_test)) # Creating tidy data frame using broom
