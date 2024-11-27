@@ -25,6 +25,7 @@ getwd()
 library(tidyverse)
 library(broom)
 library(gridExtra)
+library(grid)
 
 # Import data
 sparrow <- read_csv("data/house_sparrow.csv")
@@ -44,31 +45,38 @@ sparrow_long <- pivot_longer(sparrow, cols = c(Urban, Forest, Farmland), names_t
 
 # Visualising data with histograms to check for normal distribution for each habitat type
 # Urban
-(sparrow_urban <- ggplot(sparrow, aes(x = Urban)) +
-   geom_histogram(bins = 15, 
-                  fill = "royalblue") +
-  theme_test())
+(sparrow_urban <- ggplot(sparrow, aes(x = Urban)) + # Creating plot, specifying data and the column to use for x axis
+   geom_histogram(bins = 15,                        # Adding data as histogram with 15 intervals
+                  fill = "royalblue") +             # Adding colour responding to habitat
+   labs(x = "Abundance", y = "Frequency") +         # Adding x and y axis labels
+   theme_test())                                    # Apply a clean theme
 
 # Farmland
-(sparrow_farmland <- ggplot(sparrow, aes(x = Farmland)) +
-    geom_histogram(bins = 15, 
-                   fill = "gold") +
-    theme_test())
+(sparrow_farmland <- ggplot(sparrow, aes(x = Farmland)) + # Creating plot, specifying data and the column to use for x axis
+    geom_histogram(bins = 15,                             # Adding data as histogram with 15 intervals
+                   fill = "gold") +                       # Adding colour responding to habitat
+    labs(x = "Abundance", y = "Frequency") +              # Adding x and y axis labels
+    theme_test())                                         # Apply a clean theme
 
 # Forest
-(sparrow_forest <- ggplot(sparrow, aes(x = Forest)) +
-    geom_histogram(bins = 15,
-                   fill = "springgreen3") +
-    theme_test())
+(sparrow_forest <- ggplot(sparrow, aes(x = Forest)) + # Creating plot, specifying data and the column to use for x axis
+    geom_histogram(bins = 15,                         # Adding data as histogram with 15 intervals
+                   fill = "springgreen3") +           # Adding colour responding to habitat
+    labs(x = "Abundance", y = "Frequency") +          # Adding x and y axis labels
+    theme_test())                                     # Apply a clean theme
 
 # Arranging plots in a single panel
-grid.arrange(sparrow_urban, sparrow_farmland, sparrow_forest, nrow = 1)
+(grid.arrange(sparrow_urban, sparrow_farmland, sparrow_forest, nrow = 1,        # Creating panel of 3 plots on 1 row
+             bottom = textGrob("Fig. 1 - Response variable (Abundance) appears normally distributed across all groups (Habitats), n = 120", # Adding caption
+                               gp = gpar(fontsize = 10, fontface = "italic")))) # Specifying font size for caption and making it italic
 
 # Visualising data with a boxplot
 (sparrow_boxplot <- ggplot(sparrow_long,                                      
                            aes(x = Habitat, y = Abundance, fill = Habitat)) + # Setting x axis as habitat and y as abundance 
    geom_boxplot() +                                                           # Adding data as a boxplot
-   scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) +       # Setting box colours to colourblind friendly colours
+   scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) +       # Setting box colours to corresponding habitat colours
+    labs(x = "\n Habitat", y = "Abundance \n",                                 # Adding axis labels (\n leaves a space between plot and title) 
+      caption = "Fig. 2 - The farmland and urban group overlap in abundance and forest abundance is lower these two groups, n = 120") + # Adding caption
    theme_bw())                                                                # Apply a clean theme
 
 
@@ -123,10 +131,11 @@ sparrow_summary <- sparrow_long %>%
     geom_bar(aes(x = Habitat, y = average_abundance, fill = Habitat),    # Creating bar plot with habitat on the x axis and average abundance on the y
              stat = "identity", colour = "black") +                      # Setting stat to identity uses average_abundance instead of count and adding black borders to bars
     geom_errorbar(aes(x = Habitat, ymin = average_abundance - SE,        # Adding error bars to represent standard error
-                      ymax = average_abundance + SE), width = 0.25,          # Setting width of the error bars to 0.25 for better visibility
+                      ymax = average_abundance + SE), width = 0.25,      # Setting width of the error bars to 0.25 for better visibility
                   colour = "black", linewidth = 0.6) +                   # Setting colour and thickness of error bars
     scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) + # Setting bar colours to colourblind friendly colours
-    labs(x = "\n Habitat", y = "Average Abundance \n") +                 # Adding axis titles (\n leaves a space between plot and title)
+    labs(x = "\n Habitat", y = "Average Abundance \n",                   # Adding axis titles 
+         caption = "Fig. 3") +                 
     theme_test() +                                                       # Apply a clean theme
     theme(legend.position = "none"))                                     # Removing legend
 
