@@ -133,7 +133,11 @@ You can also add a __workflow__ which is a list of the main sections of your scr
 # 6) Communicating model results
 ```
 
-Next, we will set the working directory and load required packages. Here we will load the `tidyverse` package, which includes many helpful packages for data manipulation and data visualisation, such as  `dplyr`, `tidyr`and`ggplot2`. We will also used the package `broom` for tidying model outputs.
+Next, we will set the working directory and load required packages. The packages we will load are 
+- `tidyverse`: This package includes many helpful packages for data manipulation and data visualisation, such as  `dplyr`, `tidyr`and`ggplot2`.
+- `broom`: For tidying model outputs
+- `grid`: For customising detailed visualisations and improving layouts
+- `gridExtra`: For combining multiple plots into one figure and arranging figures
 
 
 ```r
@@ -146,6 +150,8 @@ getwd()
 # Load packages
 library(tidyverse)
 library(broom)
+library(grid)
+library(gridExtra)
 ```
 
 This tutorial uses a dummy dataset which is already relatively "clean". If you are using this tutorial to analyse your own dataset which is more complex and requires more data manipulation see these tutorials on <a href="https://ourcodingclub.github.io/tutorials/data-manip-intro/">basic data manipulation</a>, <a href="https://ourcodingclub.github.io/tutorials/data-manip-efficient/">efficient data manipulation</a> and <a href="https://ourcodingclub.github.io/tutorials/data-manip-creative-dplyr/">advanced data manipulation</a>.
