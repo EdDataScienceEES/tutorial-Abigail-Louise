@@ -234,16 +234,9 @@ To view all three plots at once we can add them to a single panel using the `gri
 
 <center><img src="plots/habitat_hist.png" alt="Img" width = "800"/></center>
 
-For any plots you want to put in a report include an __informative figure caption__. It is more professional to use captions placed under figures instead of titles.
+These histograms all have a relatively normal distribution which is what we want to continue analysing our data with ANOVA.
 
-The caption should have:
-- A figure number (`Fig. 1`)
-- A brief description of the content, such as variables or comparisons being made
-- The methods necessary to understand the figure
-- A summary of the major findings
-- The statistical information, such as the sample size, statistical test used and what your error bars mean
-
-<mark> Tip: Remove legends if they are unnecessary! </mark>
+Let's also visualise our data with a box plot to look at the variation across our continuous response variable (abundance) across our groups (habitats).
 
 ```r
 # Visualising data with a boxplot
@@ -261,6 +254,10 @@ The caption should have:
 ```
 
 <center><img src="plots/data_vis_boxplot.png" alt="Img" /></center>
+
+<mark> Tip: Remove legends if they are unnecessary! </mark>
+
+When interpretating a boxplot you are looking to see if the boxes overlap as you probably have a significant difference between these groups if they do. Looking at our boxplot, the urban and farmland boxes overlap which could mean there is no significant difference between them. The forest box does not overlap with either of the other habitats which could mean a significant difference. However, you must confirm this by doing statistical analysis!
 
 ---
 
@@ -392,6 +389,15 @@ sparrow_summary <- sparrow_long %>%
     theme_test() +                                                       # Apply a clean theme
     theme(legend.position = "none"))                                     # Removing legend
 ```
+
+For any plots you want to put in a report include an __informative figure caption__. It is more professional to use captions placed under figures instead of titles.
+
+The caption should have:
+- A figure number (`Fig. 1`)
+- A brief description of the content, such as variables or comparisons being made
+- The methods necessary to understand the figure
+- A summary of the major findings
+- The statistical information, such as the sample size, statistical test used and what your error bars mean
 
 <center><img src="plots/barplot.png" alt="Img" width = "600"/></center>
 
