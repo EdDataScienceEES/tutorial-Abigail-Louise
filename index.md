@@ -267,7 +267,9 @@ When interpretating a boxplot you are looking to see if the boxes __overlap__ as
 
 We will start our statistical analysis with running the __ANOVA!__
 
-We will assign the ANOVA result with a name (`sparrow_anova`) and usu the ANOVA function `aov ()`. With the function you want the response variable as a function of the explanatory variable.
+We will assign the result of the ANOVA to a variable called `sparrow_anova` and use the ANOVA function (`aov()`). Within the brackets, the response variable is a function `~` of the explanatory variable, then specify your data (`data = sparrow_long`).
+
+To see your ANOVA results you must print the `summary()`:
 
 ```r
 # Running a one-way ANOVA of abundance against habitat
