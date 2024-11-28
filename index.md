@@ -356,15 +356,18 @@ sparrow_summary <- sparrow_long %>%
 ```r
 # Creating bar plot of sparrow summary
 (sparrow_barplot <- ggplot(data = sparrow_summary) +
-  geom_bar(aes(x = Habitat, y = average_abundance, fill = Habitat),    # Creating bar plot with habitat on the x axis and average abundance on the y
-           stat = "identity", colour = "black") +                      # Setting stat to identity uses average_abundance instead of count and adding black borders to bars
-  geom_errorbar(aes(x = Habitat, ymin = average_abundance - SE,        # Adding error bars to represent standard error
-                ymax = average_abundance + SE), width = 0.25,          # Setting width of the error bars to 0.25 for better visibility
-                colour = "black", linewidth = 0.6) +                        # Setting colour and thickness of error bars
-  scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) + # Setting bar colours to colourblind friendly colours
-  labs(x = "\n Habitat", y = "Average Abundance \n") +                 # Adding axis titles (\n leaves a space between plot and title)
-  theme_test() +                                                       # Apply a clean theme
-  theme(legend.position = "none"))                                     # Removing legend
+    geom_bar(aes(x = Habitat, y = average_abundance, fill = Habitat),    # Creating bar plot with habitat on the x axis and average abundance on the y
+             stat = "identity", colour = "black") +                      # Setting stat to identity uses average_abundance instead of count and adding black borders to bars
+    geom_errorbar(aes(x = Habitat, ymin = average_abundance - SE,        # Adding error bars to represent standard error
+                      ymax = average_abundance + SE), width = 0.25,      # Setting width of the error bars to 0.25 for better visibility
+                  colour = "black", linewidth = 0.6) +                   # Setting colour and thickness of error bars
+    scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) + # Setting bar colours to colourblind friendly colours
+    labs(x = "\n Habitat", y = "Average Abundance \n",                   # Adding axis titles 
+         caption = "Fig. 3 - Average abundance of house sparrows across the three habitats with error bars representing 
+         standard error. The overlap of error bars between farmland and urban suggests no significant difference 
+         between these two habitats, while the forest habitat shows a significantly lower abundance, n = 120") + # Adding caption            
+    theme_test() +                                                       # Apply a clean theme
+    theme(legend.position = "none"))                                     # Removing legend
 ```
 
 <center><img src="plots/barplot.png" alt="Img"/></center>
