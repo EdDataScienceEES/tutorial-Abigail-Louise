@@ -209,6 +209,7 @@ It is good practice to visualise your data before undertaking any data analysis.
     theme_test())                                     # Apply a clean theme
 ```
 
+<mark> __Tip:__ By putting the whole code for a plot in brackets `()` the plot will appear in your bottom right window without you having to call them! </mark>
 
 ```r
 # Arranging plots in a single panel
@@ -234,8 +235,6 @@ It is good practice to visualise your data before undertaking any data analysis.
    theme(legend.position = "none"))                                                             # Removing legend
 
 ```
-
-<mark> __Tip:__ By putting the whole code for a plot in brackets `()` the plot will appear in your bottom right window without you having to call them! </mark>
 
 <center><img src="plots/data_vis_boxplot.png" alt="Img" /></center>
 
