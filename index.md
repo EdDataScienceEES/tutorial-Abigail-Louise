@@ -102,6 +102,8 @@ You can make serveral hypotheses, as you may also want make a distinction betwee
 
 #### There will be a higher abundance of house sparrow (*Passer domesticus*) in farmland habitats compared to forests.
 
+Next, you will have determined your data collection method and conducted fieldwork to gather data on the abundance of house sparrows across the three habitats at multiple sites. You are now ready to start analysing the data!
+
 ---
 
 <a name="section3"></a>
