@@ -222,7 +222,7 @@ First, we will check there is a normal distribution of the response variable (ab
 
 <mark> Tip: By putting the whole code for a plot in brackets () the plot will appear in your bottom right window without you having to call them! </mark>
 
-To view all three plots at once we can add them to a single panel:
+To view all three plots at once we can add them to a single panel using the `grid.arrange` function from the `gridExtra` package:
 
 ```r
 # Arranging plots in a single panel
