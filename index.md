@@ -289,7 +289,11 @@ __What each column means:__
 - The sum of the squares (`Sum Sq`): For the model, this measures the variation due to the explanatory variable. For the residuals, this represents the variation in the response variable that cannot be explained by the model.
 - The mean squares (`Mean Sq`) - For the model, this is the sum of the squares for the model divided by the degrees of freedom which is the average variation explained by the model. For the residuals, this is the sum of squares for the residuals divided by its degrees of freedom which is the average unexplained variation.
 
+<center><img src="images/mean_sq.png" alt="Img" width = "450"></center>
+
 - The F-statistic (`F value`) - This is the ratio of the mean square of the model to the mean square of the residuals. It tests whether the variability explained by the model is significantly greater than the residual error. If the F-value is large, it suggests that at least one group mean is significantly different from the others.
+
+<center><img src="images/f_stat.png" alt="Img" width = "300"></center>
 
 - The p-value (`Pr(>F)`) - This is the p-value associated with the F-statistic. It is a probability value of how likely it is that your data would have occurred by random chance. The smaller the p-value, the less likely the results occurred at random. You compare the p-value to your significance level and if your p-value is lower, it suggests there is an effect/difference in your data.
 
