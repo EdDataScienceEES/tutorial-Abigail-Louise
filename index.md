@@ -86,11 +86,11 @@ Before you begin doing any statistical analysis it is important to set a __resea
 
 The house sparrow (*Passer domesticus*) is one of the most widespread bird species globally and is known for their close association with human-modified environments. Despite their adaptability, monitoring suggests a severe decline of 71% between 1977 and 2008 in the UK (RSPB, n.d.). 
 
-Understanding how the house sparrow abundance varies between different habitats can provide insights into the ecological requirements and threats this species faces. This research can identify areas where the house sparrow abundance is low to inform conservation efforts.
+Understanding how the house sparrow abundance varies between different habitats can provide insights into the ecological requirements and threats this species faces. This research can identify areas where the house sparrow abundance is low to inform conservation efforts. Let's say the habitat types you would like to compare are __urban, farmland__ and __forest__. 
 
-After deciding on a research question you should think about what you expect to see from your research and why which will form your __hypothesis__.
+After deciding on a research question you should think about what you expect to see from your research and why, which will form your __hypothesis__.
 
-A hypothesis is a formal, testable statement about the expected relationship between variables or conditions. It represents your initial edducated guess about the outcome of the research based on prior knowledge. 
+A hypothesis is a formal, testable statement about the expected relationship between variables or conditions. It represents your initial educated guess about the outcome of the research based on prior knowledge. 
 
 For example you may think urban areas will have higher house sparrow abundance due to the availability of food from human activity, such as discarded scraps and bird feeders in gardens. Therefore, your hypothesis could be:
 
@@ -101,6 +101,8 @@ For example you may think urban areas will have higher house sparrow abundance d
 You can make serveral hypotheses, as you may also want make a distinction between the farmland and forests habitat. You may assume house sparrows would prefer farmland over forests due to the their dietary preference of seeds and grains, which are more abundant in agricultural areas. There may also be less competition for resources in farmland compared to forests, which have a greater number of species using the same resources. Therefore, a second hypothesis could be:
 
 #### There will be a higher abundance of house sparrow (*Passer domesticus*) in farmland habitats compared to forests.
+
+Next, you will have determined your data collection method and conducted fieldwork to gather data on the abundance of house sparrows across the three habitats at multiple sites. You are now ready to start analysing the data!
 
 ---
 
@@ -131,7 +133,11 @@ You can also add a __workflow__ which is a list of the main sections of your scr
 # 6) Communicating model results
 ```
 
-Next we will set the working directory and load required packages. Here we will load the `tidyverse` package, which includes many helpful packages for data manipulation and data visualisation, such as  `dplyr`, `tidyr`and`ggplot2`. We will also used the package `broom` for tidying model outputs.
+Next, we will set the working directory and load required packages. The packages we will load are 
+- `tidyverse`: This package includes many helpful packages for data manipulation and data visualisation, such as  `dplyr`, `tidyr`and`ggplot2`.
+- `broom`: For tidying model outputs
+- `grid`: For customising detailed visualisations and improving layouts
+- `gridExtra`: For combining multiple plots into one figure and arranging figures
 
 
 ```r
@@ -144,23 +150,24 @@ getwd()
 # Load packages
 library(tidyverse)
 library(broom)
+library(grid)
+library(gridExtra)
 ```
 
-This tutorial uses a dummy dataset which is already relatively "clean" so there will not be much data manipulation in this tutorial. If you have a more complex dataset which requires more data wrangling see these tutorials on <a href="https://ourcodingclub.github.io/tutorials/data-manip-intro/">basic data manipulation</a>, <a href="https://ourcodingclub.github.io/tutorials/data-manip-efficient/">efficient data manipulation</a> and <a href="https://ourcodingclub.github.io/tutorials/data-manip-creative-dplyr/">advanced data manipulation</a>.
+This tutorial uses a dummy dataset which is already relatively "clean". If you are using this tutorial to analyse your own dataset which is more complex and requires more data manipulation see these tutorials on <a href="https://ourcodingclub.github.io/tutorials/data-manip-intro/">basic data manipulation</a>, <a href="https://ourcodingclub.github.io/tutorials/data-manip-efficient/">efficient data manipulation</a> and <a href="https://ourcodingclub.github.io/tutorials/data-manip-creative-dplyr/">advanced data manipulation</a>.
 
-Next, we need to import our data which can be done by directly typing the code below into your script. Or you can click `Files/ data/ sparrow_data.csv/ Import Dataset` then click the `Import` button in the bottom right of the window. You will notice this code will be entered into the console so if you would like to save it, copy and paste the code into your script. 
+Next, we need to import our data which can be done by directly typing the code below into your script. Or you can click `Files/ data/ house_sparrow.csv/ Import Dataset` then click the `Import` button in the bottom right of the window. You will notice this code will be entered into the console so if you would like to save it, copy and paste the code into your script. 
 
 ```r
 # Import data
-sparrow <- read_csv("data/sparrow_data.csv")
+sparrow <- read_csv("data/house_sparrow.csv")
 ```
 
-We can check the first 6 rows of data and the column headers by using the `head()` function. Or to see the whole dataset you can use the `print()` function or the `view()` function.
+We can check the first 6 rows of data and the column headers in the console by using the `head()` function. Or to see the whole dataset in the top left window you can use the `view()` function.
 
 ```r
 # Check the data
 head(sparrow)
-print(sparrow)
 view(sparrow)
 ```
 
@@ -349,18 +356,21 @@ sparrow_summary <- sparrow_long %>%
 ```r
 # Creating bar plot of sparrow summary
 (sparrow_barplot <- ggplot(data = sparrow_summary) +
-  geom_bar(aes(x = Habitat, y = average_abundance, fill = Habitat),    # Creating bar plot with habitat on the x axis and average abundance on the y
-           stat = "identity", colour = "black") +                      # Setting stat to identity uses average_abundance instead of count and adding black borders to bars
-  geom_errorbar(aes(x = Habitat, ymin = average_abundance - SE,        # Adding error bars to represent standard error
-                ymax = average_abundance + SE), width = 0.25,          # Setting width of the error bars to 0.25 for better visibility
-                colour = "black", linewidth = 0.6) +                        # Setting colour and thickness of error bars
-  scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) + # Setting bar colours to colourblind friendly colours
-  labs(x = "\n Habitat", y = "Average Abundance \n") +                 # Adding axis titles (\n leaves a space between plot and title)
-  theme_test() +                                                       # Apply a clean theme
-  theme(legend.position = "none"))                                     # Removing legend
+    geom_bar(aes(x = Habitat, y = average_abundance, fill = Habitat),    # Creating bar plot with habitat on the x axis and average abundance on the y
+             stat = "identity", colour = "black") +                      # Setting stat to identity uses average_abundance instead of count and adding black borders to bars
+    geom_errorbar(aes(x = Habitat, ymin = average_abundance - SE,        # Adding error bars to represent standard error
+                      ymax = average_abundance + SE), width = 0.25,      # Setting width of the error bars to 0.25 for better visibility
+                  colour = "black", linewidth = 0.6) +                   # Setting colour and thickness of error bars
+    scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) + # Setting bar colours to colourblind friendly colours
+    labs(x = "\n Habitat", y = "Average Abundance \n",                   # Adding axis titles 
+         caption = "Fig. 3 - Average abundance of house sparrows across the three habitats with error bars representing 
+         standard error. The overlap of error bars between farmland and urban suggests no significant difference 
+         between these two habitats, while the forest habitat shows a significantly lower abundance, n = 120") + # Adding caption            
+    theme_test() +                                                       # Apply a clean theme
+    theme(legend.position = "none"))                                     # Removing legend
 ```
 
-<center><img src="plots/barplot.png" alt="Img"/></center>
+<center><img src="plots/barplot.png" alt="Img" width = "500"/></center>
 
 ```r
 # Improve Tukey's test result plot
