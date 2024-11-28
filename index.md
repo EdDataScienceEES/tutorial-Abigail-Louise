@@ -279,12 +279,21 @@ sparrow_anova <- aov(Abundance ~ Habitat, data = sparrow_long)
 summary(sparrow_anova)
 ```
 
+Output in console:
+<center><img src="outputs/anova_summary.png" alt="Img" width = "500"/></center>
+
+Now, let's interpret our ANOVA table results! 
+
+Each column will have a value for the model and the residuals. The residuals are the differences between the observed values and the values predicted by the model.
+
+__What each column means:__
+- The degrees of freedom (`Df`): For the model, this represents the number of parameters estimated in the model excluding the intercept (number of groups - 1). For the residuals, this represents the remaining unexplained variation (total number of observations - number of groups).
+- The sum of the squares (`Sum Sq): For the model
+
 Our significance level for this tutorial is 0.05. Why? 
 
 This is widely adopted standard in statistics which represents the threshold for deciding significance. The significance level is the probability of making a type I error (false positive), so at 0.05 there is a 5% risk of concluding that there is an effect/difference when there is none. 
 
-Output in console:
-<center><img src="outputs/anova_summary.png" alt="Img" width = "500"/></center>
 
 __Checking assumptions:__
 
