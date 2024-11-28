@@ -307,22 +307,33 @@ __Checking assumptions:__
 
 A __balanced design__ is also preferred where the sample sizes across groups are roughly equal, which ours are at 40 per group.
 
-1) We can check for a normal distribution of residuals by plotting a histogram of the residuals and a normal Q-Q plot.
+2) We can check for a normal distribution of residuals by plotting a __histogram__ of the residuals and a normal __Q-Q__ plot.
+
+For the histogram, we want to see a normal (gaussian) distribution.
 
 ```r
 hist(sparrow_anova$residuals, breaks = 30)  # Plotting histogram of residuals and increasing intervals to get a better visualisation
-# The residuals do not look normally distributed
+# The residuals look normally distributed
 ```
 
 <center><img src="plots/hist_res.png" alt="Img" /></center>
 
+The residuals have a normal distribution!
+
+For the Q-Q plot, we want the points to sit mostly on the straight diagonal line.
+
 ```r
 plot(sparrow_anova, which = 2) # Plotting Q-Q plot
-# There are heavy tails present which suggests the data has a skewed distribution 
-# Or the outliers do not follow a normal distribution (by looking at the histogram it appears to be the this)
+# Residuals fit along the diagonal nicely
 ```
 
 <center><img src="plots/Q-Q_res.png" alt="Img" /></center>
+
+Our residuals also lie well along the straight diagonal line!
+
+3) To check for equal variance of residuals across the groups we will create a __residuals vs fixed__ plot.
+
+We want to see a straight diagonal red line along from 0.
 
 ```r
 # Checking for homoscedasticity
@@ -332,7 +343,9 @@ plot(sparrow_anova, which = 1)
 
 <center><img src="plots/res_vs_fix.png" alt="Img"/></center>
 
-From these results we may think our <a href="hypotheses">hypotheses</a> are true. However, 
+The red line is straight and centered across 0! Great, we have met all the assumptions!
+
+Based on these results, we might initially think our <a href="hypotheses">hypotheses</a> are supported. However, ANOVA only tells us that at least __one__ group differs from another; it doesn’t specify which groups are different or whether all groups differ. This is were the post-hoc test comes in to give us a better insight!
 
 ---
 
