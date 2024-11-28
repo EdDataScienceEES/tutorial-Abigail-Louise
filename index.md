@@ -185,14 +185,9 @@ sparrow_long <- pivot_longer(sparrow, cols = c(Urban, Forest, Farmland), names_t
 
 It is important to visualise your data __before__ undertaking any data analysis. 
 
-ANOVA is a parametric test which means it replies on assumptions about the parameters of the population from which the sample is derived. 
+ANOVA is a parametric test which means it replies on assumptions about the parameters of the population from which the sample is derived. An important assumption is that the data are drawn from a population with a __normal distribution__.
 
-These assumptions are:
-- The data are drawn from a population with a __normal distribution__
-- There is __equal variances__ (homogeneity) across groups
-- The data are measured on an __interval or ratio scale__ (continuous or numerical)
-
-First, we will check there is a normal distribution of the response variable (abundance) by plotting a __histogram__ of the frequency distribution.
+We will check there is a normal distribution of the response variable (abundance) by plotting a __histogram__ of the frequency distribution.
 
 <mark> Please note: If your data does not have a normal distribution the data can be log-transformed or you could use a non-parametric test, such as Mann-Whitney U test or Kruskal-Wallis test. </mark>
 
@@ -306,9 +301,13 @@ This is widely adopted standard in statistics which represents the threshold for
 We now need to check our model assumptions are met to trust the ANOVA output.
 
 __Checking assumptions:__
+1) The observations within and across groups are __independent__
+2) The resisuals follow a __normal distribution__
+3) There is __equal variances__ (homogeneity) across groups
 
-We can check for a normal distribution of residuals by plotting a histogram of the residuals and a normal Q-Q plot.
+A __balanced design__ is also preferred where the sample sizes across groups are roughly equal, which ours are at 40 per group.
 
+1) We can check for a normal distribution of residuals by plotting a histogram of the residuals and a normal Q-Q plot.
 
 ```r
 hist(sparrow_anova$residuals, breaks = 30)  # Plotting histogram of residuals and increasing intervals to get a better visualisation
