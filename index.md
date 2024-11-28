@@ -196,6 +196,15 @@ First, we will check there is a normal distribution of the response variable (ab
 
 <mark> Please note: If your data does not have a normal distribution the data can be log-transformed or you could use a non-parametric test, such as Mann-Whitney U test or Kruskal-Wallis test. </mark>
 
+For any plots you want to put in a report include an __informative figure caption__. It is more professional to use captions placed under figures instead of titles.
+
+The caption should have:
+- A figure number (`Fig. 1`)
+- A brief description of the content, such as variables or comparisons being made
+- The methods necessary to understand the figure
+- A summary of the mojor finding
+- The statistical information, such as the sample size, statistical test used and what your error bars mean
+
 ```r
 # Visualising data with histograms to check for normal distribution for each habitat type
 # Urban
@@ -231,6 +240,9 @@ First, we will check there is a normal distribution of the response variable (ab
 ```
 
 <center><img src="plots/habitat_hist.png" alt="Img" width = "800"/></center>
+
+
+<mark> Tip: Remove legends if they are unnecessary! </mark>
 
 ```r
 # Visualising data with a boxplot
