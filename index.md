@@ -402,11 +402,10 @@ __After completion this tutorial you should be able to:__
 - Visualise the data and outputs
 - Report findings
 
-__References:__
-RSPB (n.d.). www.rspb.org.uk. Available at: https://www.rspb.org.uk/birds-and-wildlife/house-sparrow. (accessed 26/11/24)
 
 <hr>
-<hr>
+
+__Reference:__ RSPB (n.d.). www.rspb.org.uk. Available at: https://www.rspb.org.uk/birds-and-wildlife/house-sparrow. (accessed 26/11/24)
 
 #### Useful links:
 - Two articles from Statology: <a href="https://www.statology.org/one-way-anova/" target="_blank">One-way ANOVA: Definition, formula and example</a> and <a href="https://www.statology.org/tukey-test-r/" target="_blank">How to perform Tukey's test in R</a>
