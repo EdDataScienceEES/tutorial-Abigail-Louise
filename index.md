@@ -410,9 +410,9 @@ For any plots you want to put in a report include an __informative figure captio
 The caption should have:
 - A figure number (`Fig. 1`)
 - A brief description of the content, such as variables or comparisons being made
-- The methods necessary to understand the figure
-- A summary of the major findings
 - The statistical information, such as the sample size, statistical test used and what your error bars mean
+- A summary of the major findings
+
 
 <center><img src="plots/barplot.png" alt="Img" width = "600"/></center>
 
