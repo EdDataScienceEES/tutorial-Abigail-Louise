@@ -330,7 +330,7 @@ Another way to view the results is by plotting them:
 plot(sparrow_test)
 ```
 
-<center><img src="plots/tukey.png" alt="Img"/></center>
+<center><img src="plots/tukey.png" alt="Img" width = "600"/></center>
 
 To read this plot you are looking to see if the confidence intervals cross over the zero line. If they cross zero this __is not__ statistically significant and if they do not this __is__ statistically significant.
 
@@ -370,7 +370,7 @@ sparrow_summary <- sparrow_long %>%
     theme(legend.position = "none"))                                     # Removing legend
 ```
 
-<center><img src="plots/barplot.png" alt="Img" width = "500"/></center>
+<center><img src="plots/barplot.png" alt="Img" width = "600"/></center>
 
 ```r
 # Improve Tukey's test result plot
