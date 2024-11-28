@@ -370,7 +370,7 @@ sparrow_summary <- sparrow_long %>%
     theme(legend.position = "none"))                                     # Removing legend
 ```
 
-<center><img src="plots/barplot.png" alt="Img"/></center>
+<center><img src="plots/barplot.png" alt="Img" width = "500"/></center>
 
 ```r
 # Improve Tukey's test result plot
