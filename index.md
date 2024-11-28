@@ -146,21 +146,20 @@ library(tidyverse)
 library(broom)
 ```
 
-This tutorial uses a dummy dataset which is already relatively "clean" so there will not be much data manipulation in this tutorial. If you have a more complex dataset which requires more data wrangling see these tutorials on <a href="https://ourcodingclub.github.io/tutorials/data-manip-intro/">basic data manipulation</a>, <a href="https://ourcodingclub.github.io/tutorials/data-manip-efficient/">efficient data manipulation</a> and <a href="https://ourcodingclub.github.io/tutorials/data-manip-creative-dplyr/">advanced data manipulation</a>.
+This tutorial uses a dummy dataset which is already relatively "clean". If you are using this tutorial to analyse your own dataset which is more complex and requires more data manipulation see these tutorials on <a href="https://ourcodingclub.github.io/tutorials/data-manip-intro/">basic data manipulation</a>, <a href="https://ourcodingclub.github.io/tutorials/data-manip-efficient/">efficient data manipulation</a> and <a href="https://ourcodingclub.github.io/tutorials/data-manip-creative-dplyr/">advanced data manipulation</a>.
 
-Next, we need to import our data which can be done by directly typing the code below into your script. Or you can click `Files/ data/ sparrow_data.csv/ Import Dataset` then click the `Import` button in the bottom right of the window. You will notice this code will be entered into the console so if you would like to save it, copy and paste the code into your script. 
+Next, we need to import our data which can be done by directly typing the code below into your script. Or you can click `Files/ data/ house_sparrow.csv/ Import Dataset` then click the `Import` button in the bottom right of the window. You will notice this code will be entered into the console so if you would like to save it, copy and paste the code into your script. 
 
 ```r
 # Import data
-sparrow <- read_csv("data/sparrow_data.csv")
+sparrow <- read_csv("data/house_sparrow.csv")
 ```
 
-We can check the first 6 rows of data and the column headers by using the `head()` function. Or to see the whole dataset you can use the `print()` function or the `view()` function.
+We can check the first 6 rows of data and the column headers in the console by using the `head()` function. Or to see the whole dataset in the top left window you can use the `view()` function.
 
 ```r
 # Check the data
 head(sparrow)
-print(sparrow)
 view(sparrow)
 ```
 
