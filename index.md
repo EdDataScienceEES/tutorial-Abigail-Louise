@@ -267,9 +267,7 @@ When interpretating a boxplot you are looking to see if the boxes __overlap__ as
 
 We will start our statistical analysis with running the __ANOVA!__
 
-We will assign the result of the ANOVA to a variable called `sparrow_anova` and use the ANOVA function (`aov()`). Within the brackets, the response variable is a function `~` of the explanatory variable, then specify your data (`data = sparrow_long`).
-
-To see your ANOVA results you must print the `summary()`:
+We will assign the result of the ANOVA to a variable called `sparrow_anova` and use the ANOVA function (`aov()`). Within the brackets, the response variable is a function `~` of the explanatory variable, then specify your data (`data = sparrow_long`). Then, to see your ANOVA results you must print the `summary()`:
 
 ```r
 # Running a one-way ANOVA of abundance against habitat
@@ -284,11 +282,16 @@ Output in console:
 
 Now, let's interpret our ANOVA table results! 
 
-Each column will have a value for the model and the residuals. The residuals are the differences between the observed values and the values predicted by the model.
+Each column will have a value for the __model__ and the __residuals__. The residuals are the differences between the observed values and the values predicted by the model.
 
 __What each column means:__
 - The degrees of freedom (`Df`): For the model, this represents the number of parameters estimated in the model excluding the intercept (number of groups - 1). For the residuals, this represents the remaining unexplained variation (total number of observations - number of groups).
-- The sum of the squares (`Sum Sq): For the model
+- The sum of the squares (`Sum Sq`): For the model, this measures the variation due to the explanatory variable. For the residuals, this represents the variation in the response variable that cannot be explained by the model.
+- The mean squares (`Mean Sq`) - For the model, this is the sum of the squares for the model divided by the degrees of freedom which is the average variation explained by the model. For the residuals, this is the sum of squares for the residuals divided by its degrees of freedom which is the average unexplained variation.
+
+- The F-statistic (`F value`) - This is the ratio of the mean square of the model to the mean square of the residuals. It tests whether the variability explained by the model is significantly greater than the residual error. If the F-value is large, it suggests that at least one group mean is significantly different from the others.
+
+- The p-value (`Pr(>F)`) - This is the p-value associated with the F-statistic. It is a probability value of how likely it is that your data would have occurred by random chance. The smaller the p-value, the less likely the results occurred at random. You compare the p-value to your significance level and if your p-value is lower, it suggests there is an effect/difference in your data.
 
 Our significance level for this tutorial is 0.05. Why? 
 
