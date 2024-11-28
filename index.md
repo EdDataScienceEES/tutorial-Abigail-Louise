@@ -90,7 +90,7 @@ Understanding how the house sparrow abundance varies between different habitats 
 
 After deciding on a research question you should think about what you expect to see from your research and why, which will form your __hypothesis__.
 
-A hypothesis is a formal, testable statement about the expected relationship between variables or conditions. It represents your initial edducated guess about the outcome of the research based on prior knowledge. 
+A hypothesis is a formal, testable statement about the expected relationship between variables or conditions. It represents your initial educated guess about the outcome of the research based on prior knowledge. 
 
 For example you may think urban areas will have higher house sparrow abundance due to the availability of food from human activity, such as discarded scraps and bird feeders in gardens. Therefore, your hypothesis could be:
 
