@@ -401,6 +401,26 @@ The comparison of mean values between the urban and farmland groups shows that t
 
 ## 7) Communicating model results
 
+Well done, you've made it to the final step! 
+
+You can communicate your findings either verbally or visually, or both!
+
+__Verbally:__
+
+Replace your results with the words in *italics*.
+
+A one-way ANOVA was performed to compare the effect of *the explanatory variable* on *the response variable*.
+
+A one-way ANOVA revealed that there *was or was not* a statistically significant difference in *the response variable* between at least two groups (F*between groups df, within groups df* = *f-value*, p = *p-value*.
+
+Tukey’s HSD Test for multiple comparisons found that the mean value of *the response variable* was significantly different between *group name* and *group name* (p = *p-value*, *confidence interval %* C.I. = *lower, upper*).
+
+There was no statistically significant difference between *group name* and *group name* (p= *p-value*).
+
+For our results this would be:
+
+"
+
 ```r
 # Creating summary table of key statistics 
 sparrow_summary <- sparrow_long %>%
@@ -466,7 +486,7 @@ ggsave(sparrow_tukey_plot, file = "plots/tukey_test_plot.png", # Replace with yo
 
 ---
 
-__Well done__ for making through this tutorial! You should now know how to further analyse your ANOVA results by conducting Tukey's HSD post-hoc test.
+__Congratulations__, for making it through this tutorial! You should now know how to further analyse your ANOVA results by conducting Tukey's HSD post-hoc test.
 
 __After completion this tutorial you should be able to:__
 - Load and prepare data for analysis in RStudio
