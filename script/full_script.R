@@ -72,13 +72,15 @@ sparrow_long <- pivot_longer(sparrow, cols = c(Urban, Forest, Farmland), names_t
 
 # Visualising data with a boxplot
 (sparrow_boxplot <- ggplot(sparrow_long,                                      
-                           aes(x = Habitat, y = Abundance, fill = Habitat)) + # Setting x axis as habitat and y as abundance 
-   geom_boxplot() +                                                           # Adding data as a boxplot
-   scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) +       # Setting box colours to corresponding habitat colours
-    labs(x = "\n Habitat", y = "Abundance \n",                                 # Adding axis labels (\n leaves a space between plot and title) 
-      caption = "Fig. 2 - The farmland and urban group overlap in abundance and forest abundance is lower these two groups, n = 120") + # Adding caption
-   theme_bw())                                                                # Apply a clean theme
-
+                           aes(x = Habitat, y = Abundance, fill = Habitat)) +                   # Setting x axis as habitat and y as abundance 
+   geom_boxplot() +                                                                             # Adding data as a boxplot
+   scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) +                         # Setting box colours to corresponding habitat colours
+    labs(x = "\n Habitat", y = "Abundance \n",                                                  # Adding axis labels (\n leaves a space between plot and title) 
+      caption = "Fig. 2 - Boxplot showing the distribution of abundance across farmland, urban, 
+      and forest groups. The farmland and urban groups exhibit overlapping, while 
+      forest abundance is generally lower than that of the other two groups, n = 120") +        # Adding caption
+   theme_bw() +                                                                                 # Apply a clean theme
+   theme(legend.position = "none"))                                                             # Removing legend
 
 # 4) Running a one-way ANOVA ----
 
