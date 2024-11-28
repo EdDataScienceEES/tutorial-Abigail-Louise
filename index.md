@@ -222,7 +222,7 @@ First, we will check there is a normal distribution of the response variable (ab
 
 <mark> Tip: By putting the whole code for a plot in brackets () the plot will appear in your bottom right window without you having to call them! </mark>
 
-To view all three plots at once we can add them to a single panel using the `grid.arrange` function from the `gridExtra` package:
+To view all three plots at once we can add them to a single panel using the `grid.arrange ()` function from the `gridExtra` package:
 
 ```r
 # Arranging plots in a single panel
@@ -257,13 +257,17 @@ Let's also visualise our data with a box plot to look at the variation across ou
 
 <mark> Tip: Remove legends if they are unnecessary! </mark>
 
-When interpretating a boxplot you are looking to see if the boxes overlap as you probably have a significant difference between these groups if they do. Looking at our boxplot, the urban and farmland boxes overlap which could mean there is no significant difference between them. The forest box does not overlap with either of the other habitats which could mean a significant difference. However, you must confirm this by doing statistical analysis!
+When interpretating a boxplot you are looking to see if the boxes __overlap__ as you probably have a significant difference between these groups if they do. This is due to the box encompassing half of each groups values! Looking at our boxplot, the urban and farmland boxes overlap which could mean there is no significant difference between them. The forest box does not overlap with either of the other habitats which could mean a significant difference. However, you must confirm this by doing __statistical analysis!__
 
 ---
 
 <a name="section5"></a>
 
 ## 5) Running a one-way ANOVA
+
+We will start our statistical analysis with running the __ANOVA!__
+
+We will assign the ANOVA result with a name (`sparrow_anova`) and usu the ANOVA function `aov ()`. With the function you want the response variable as a function of the explanatory variable.
 
 ```r
 # Running a one-way ANOVA of abundance against habitat
