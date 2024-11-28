@@ -323,7 +323,7 @@ Output in console:
 
 We can see from the p-values (if our significance level is 0.05), the forest and farmland habitats show a significant differences in abundance as the p-value is less than 0.05, and so do the urban and forest habitats. However, the urban and farmland habitats have a p-value more than 0.05 so they do not appear to be significantly different. 
 
-Another way to view the results is by plotting them:
+If you find the tables quite confusing, another way to interpret the results is by plotting them:
 ```r
 # Plotting Tukey's test result
 plot(sparrow_test)
