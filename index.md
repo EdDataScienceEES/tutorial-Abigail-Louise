@@ -307,6 +307,8 @@ __Checking assumptions:__
 
 A __balanced design__ is also preferred where the sample sizes across groups are roughly equal, which ours are at 40 per group.
 
+1) For independence, each observation should be unrelated to the others. We are going to assume our experimental design is robust and it effectively ensured the independence of all observations.
+
 2) We can check for a normal distribution of residuals by plotting a __histogram__ of the residuals and a normal __Q-Q__ plot.
 
 For the histogram, we want to see a normal (gaussian) distribution.
