@@ -403,17 +403,17 @@ The comparison of mean values between the urban and farmland groups shows that t
 
 Well done, you've made it to the final step! 
 
-You can communicate your findings either verbally or visually, or both!
+You can communicate your findings either __verbally__ or __visually__, or __both!__
 
 __Verbally:__
 
 Replace your results with the words in *italics*.
 
-A one-way ANOVA was performed to compare the effect of *the explanatory variable* on *the response variable*.
+A one-way ANOVA was conducted to compare the effect of *the explanatory variable* on *the response variable*.
 
-A one-way ANOVA revealed that there *was or was not* a statistically significant difference in *the response variable* between at least two groups (F*between groups df, within groups df* = *f-value*, p = *p-value*.
+A ANOVA results indicated that there *was/was not* a statistically significant difference in *the response variable* among at least two groups (F(*between groups df, within groups df*) = *f-value*, p = *p-value*.
 
-Tukey’s HSD Test for multiple comparisons found that the mean value of *the response variable* was significantly different between *group name* and *group name* (p = *p-value*, *confidence interval %* C.I. = *lower, upper*).
+Tukey’s HSD post-hoc test for multiple comparisons found that the mean value of *the response variable* was significantly different between *group name* and *group name* (p = *p-value*, *confidence interval %* C.I. = *lower, upper*).
 
 There was no statistically significant difference between *group name* and *group name* (p= *p-value*).
 
