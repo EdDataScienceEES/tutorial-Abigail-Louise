@@ -185,14 +185,9 @@ sparrow_long <- pivot_longer(sparrow, cols = c(Urban, Forest, Farmland), names_t
 
 It is important to visualise your data __before__ undertaking any data analysis. 
 
-ANOVA is a parametric test which means it replies on assumptions about the parameters of the population from which the sample is derived. 
+ANOVA is a parametric test which means it replies on assumptions about the parameters of the population from which the sample is derived. An important assumption is that the data are drawn from a population with a __normal distribution__.
 
-These assumptions are:
-- The data are drawn from a population with a __normal distribution__
-- There is __equal variances__ (homogeneity) across groups
-- The data are measured on an __interval or ratio scale__ (continuous or numerical)
-
-First, we will check there is a normal distribution of the response variable (abundance) by plotting a __histogram__ of the frequency distribution.
+We will check there is a normal distribution of the response variable (abundance) by plotting a __histogram__ of the frequency distribution.
 
 <mark> Please note: If your data does not have a normal distribution the data can be log-transformed or you could use a non-parametric test, such as Mann-Whitney U test or Kruskal-Wallis test. </mark>
 
@@ -222,7 +217,7 @@ First, we will check there is a normal distribution of the response variable (ab
 
 <mark> Tip: By putting the whole code for a plot in brackets () the plot will appear in your bottom right window without you having to call them! </mark>
 
-To view all three plots at once we can add them to a single panel using the `grid.arrange` function from the `gridExtra` package:
+To view all three plots at once we can add them to a single panel using the `grid.arrange ()` function from the `gridExtra` package:
 
 ```r
 # Arranging plots in a single panel
@@ -234,16 +229,9 @@ To view all three plots at once we can add them to a single panel using the `gri
 
 <center><img src="plots/habitat_hist.png" alt="Img" width = "800"/></center>
 
-For any plots you want to put in a report include an __informative figure caption__. It is more professional to use captions placed under figures instead of titles.
+These histograms all have a relatively normal distribution which is what we want to continue analysing our data with ANOVA.
 
-The caption should have:
-- A figure number (`Fig. 1`)
-- A brief description of the content, such as variables or comparisons being made
-- The methods necessary to understand the figure
-- A summary of the major findings
-- The statistical information, such as the sample size, statistical test used and what your error bars mean
-
-<mark> Tip: Remove legends if they are unnecessary! </mark>
+Let's also visualise our data with a box plot to look at the variation across our continuous response variable (abundance) across our groups (habitats).
 
 ```r
 # Visualising data with a boxplot
@@ -262,11 +250,19 @@ The caption should have:
 
 <center><img src="plots/data_vis_boxplot.png" alt="Img" /></center>
 
+<mark> Tip: Remove legends if they are unnecessary! </mark>
+
+When interpretating a boxplot you are looking to see if the boxes __overlap__ as you probably have a significant difference between these groups if they do. This is due to the box encompassing half of each groups values! Looking at our boxplot, the urban and farmland boxes overlap which could mean there is no significant difference between them. The forest box does not overlap with either of the other habitats which could mean a significant difference. However, you must confirm this by doing __statistical analysis!__
+
 ---
 
 <a name="section5"></a>
 
 ## 5) Running a one-way ANOVA
+
+We will start our statistical analysis with running the __ANOVA!__
+
+We will assign the result of the ANOVA to a variable called `sparrow_anova` and use the ANOVA function (`aov()`). Within the brackets, the response variable is a function `~` of the explanatory variable, then specify your data (`data = sparrow_long`). Then, to see your ANOVA results you must print the `summary()`:
 
 ```r
 # Running a one-way ANOVA of abundance against habitat
@@ -276,17 +272,42 @@ sparrow_anova <- aov(Abundance ~ Habitat, data = sparrow_long)
 summary(sparrow_anova)
 ```
 
-Our significance level for this tutorial is 0.05. Why? 
-
-This is widely adopted standard in statistics which represents the threshold for deciding significance. The significance level is the probability of making a type I error (false positive), so at 0.05 there is a 5% risk of concluding that there is an effect/difference when there is none. 
-
 Output in console:
 <center><img src="outputs/anova_summary.png" alt="Img" width = "500"/></center>
 
+Now, let's interpret our ANOVA table results! 
+
+Each column will have a value for the __model__ and the __residuals__. The residuals are the differences between the observed values and the values predicted by the model.
+
+__What each column means:__
+- The degrees of freedom (`Df`): For the model, this represents the number of parameters estimated in the model excluding the intercept (number of groups - 1). For the residuals, this represents the remaining unexplained variation (total number of observations - number of groups).
+- The sum of the squares (`Sum Sq`): For the model, this measures the variation due to the explanatory variable. For the residuals, this represents the variation in the response variable that cannot be explained by the model.
+- The mean squares (`Mean Sq`) - For the model, this is the sum of the squares for the model divided by the degrees of freedom which is the average variation explained by the model. For the residuals, this is the sum of squares for the residuals divided by its degrees of freedom which is the average unexplained variation.
+
+<center><img src="images/mean_sq.png" alt="Img" width = "450"></center>
+
+- The F-statistic (`F value`) - This is the ratio of the mean square of the model to the mean square of the residuals. It tests whether the variability explained by the model is significantly greater than the residual error. If the F-value is large, it suggests that at least one group mean is significantly different from the others.
+
+<center><img src="images/f_stat.png" alt="Img" width = "300"></center>
+
+- The p-value (`Pr(>F)`) - This is the p-value associated with the F-statistic. It is a probability value of how likely it is that your data would have occurred by random chance. The smaller the p-value, the less likely the results occurred at random. You compare the p-value to your significance level and if your p-value is lower, it suggests there is an effect/difference in your data.
+
+The most important value to examine is the __p-value__, which we compare to our significance level which is __0.05__. Our p-value indicates high significance, as it is much smaller than the threshold. This suggests a significant difference in abundance between the different habitats.
+
+Our significance level for this tutorial is 0.05. __Why?__
+
+This is widely adopted standard in statistics which represents the threshold for deciding significance. The significance level is the probability of making a type I error (false positive), so at 0.05 there is a 5% risk of concluding that there is an effect/difference when there is none. While 0.05 is common, it’s not universally appropriate! For example, in the context of medicine, where decisions have high stakes the threshold may be stricter, such as 0.01 or 0.001.
+
+We now need to check our model assumptions are met to trust the ANOVA output.
+
 __Checking assumptions:__
+1) The observations within and across groups are __independent__
+2) The resisuals follow a __normal distribution__
+3) There is __equal variances__ (homogeneity) across groups
 
-We can check for a normal distribution of residuals by plotting a histogram of the residuals and a normal Q-Q plot.
+A __balanced design__ is also preferred where the sample sizes across groups are roughly equal, which ours are at 40 per group.
 
+1) We can check for a normal distribution of residuals by plotting a histogram of the residuals and a normal Q-Q plot.
 
 ```r
 hist(sparrow_anova$residuals, breaks = 30)  # Plotting histogram of residuals and increasing intervals to get a better visualisation
@@ -393,6 +414,15 @@ sparrow_summary <- sparrow_long %>%
     theme(legend.position = "none"))                                     # Removing legend
 ```
 
+For any plots you want to put in a report include an __informative figure caption__. It is more professional to use captions placed under figures instead of titles.
+
+The caption should have:
+- A figure number (`Fig. 1`)
+- A brief description of the content, such as variables or comparisons being made
+- The statistical information, such as the sample size, statistical test used and what your error bars mean
+- A summary of the major findings
+
+
 <center><img src="plots/barplot.png" alt="Img" width = "600"/></center>
 
 ```r
@@ -411,11 +441,17 @@ sparrow_summary <- sparrow_long %>%
 
 <center><img src="plots/imp_tukey.png" alt="Img"/></center>
 
-
-How to export images?
+To save your plots as images:
+```r
+# Saving a figure
+ggsave(sparrow_tukey_plot, file = "plots/tukey_test_plot.png", # Replace with your own filepath and file name 
+       width = 12, height = 6)                                 # Specifying width and height
+```
 
 
 ---
+
+__Well done__ for making through this tutorial! You should now know how to further analyse your ANOVA results by conducting Tukey's HSD post-hoc test.
 
 __After completion this tutorial you should be able to:__
 - Load and prepare data for analysis in RStudio
