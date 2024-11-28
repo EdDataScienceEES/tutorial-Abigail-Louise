@@ -102,7 +102,7 @@ You can make serveral hypotheses, as you may also want make a distinction betwee
 
 #### There will be a higher abundance of house sparrow (*Passer domesticus*) in farmland habitats compared to forests.
 
-Next, you will have determined your data collection method and conducted fieldwork to gather data on the abundance of house sparrows across the three habitats at multiple sites. You are now ready to start analysing the data!
+Imagine you have determined your data collection method and conducted fieldwork to gather data on the abundance of house sparrows across the three habitats at multiple sites. You are now ready to start analysing the data!
 
 ---
 
@@ -183,7 +183,18 @@ sparrow_long <- pivot_longer(sparrow, cols = c(Urban, Forest, Farmland), names_t
 
 ## 4) Data visualisation
 
-It is good practice to visualise your data before undertaking any data analysis.
+It is important to visualise your data __before__ undertaking any data analysis. 
+
+ANOVA is a parametric test which means it replies on assumptions about the parameters of the population from which the sample is derived. 
+
+These assumptions are:
+- The data are drawn from a population with a __normal distribution__
+- There is __equal variances__ (homogeneity) across groups
+- The data are measured on an __interval or ratio scale__ (continuous or numerical)
+
+First, we will check there is a normal distribution of the response variable (abundance) by plotting a __histogram__ of the frequency distribution.
+
+<mark> Please note: If your data does not have a normal distribution the data can be log-transformed or you could use a non-parametric test, such as Mann-Whitney U test or Kruskal-Wallis test. </mark>
 
 ```r
 # Visualising data with histograms to check for normal distribution for each habitat type
@@ -209,6 +220,9 @@ It is good practice to visualise your data before undertaking any data analysis.
     theme_test())                                     # Apply a clean theme
 ```
 
+<mark> Tip: By putting the whole code for a plot in brackets () the plot will appear in your bottom right window without you having to call them! </mark>
+
+To view all three plots at once we can add them to a single panel using the `grid.arrange` function from the `gridExtra` package:
 
 ```r
 # Arranging plots in a single panel
@@ -219,6 +233,17 @@ It is good practice to visualise your data before undertaking any data analysis.
 ```
 
 <center><img src="plots/habitat_hist.png" alt="Img" width = "800"/></center>
+
+For any plots you want to put in a report include an __informative figure caption__. It is more professional to use captions placed under figures instead of titles.
+
+The caption should have:
+- A figure number (`Fig. 1`)
+- A brief description of the content, such as variables or comparisons being made
+- The methods necessary to understand the figure
+- A summary of the major findings
+- The statistical information, such as the sample size, statistical test used and what your error bars mean
+
+<mark> Tip: Remove legends if they are unnecessary! </mark>
 
 ```r
 # Visualising data with a boxplot
@@ -234,8 +259,6 @@ It is good practice to visualise your data before undertaking any data analysis.
    theme(legend.position = "none"))                                                             # Removing legend
 
 ```
-
-<mark> __Tip:__ By putting the whole code for a plot in brackets `()` the plot will appear in your bottom right window without you having to call them! </mark>
 
 <center><img src="plots/data_vis_boxplot.png" alt="Img" /></center>
 
@@ -324,13 +347,13 @@ Output in console:
 
 We can see from the p-values (if our significance level is 0.05), the forest and farmland habitats show a significant differences in abundance as the p-value is less than 0.05, and so do the urban and forest habitats. However, the urban and farmland habitats have a p-value more than 0.05 so they do not appear to be significantly different. 
 
-Another way to view the results is by plotting them:
+If you find the tables quite confusing, another way to interpret the results is by plotting them:
 ```r
 # Plotting Tukey's test result
 plot(sparrow_test)
 ```
 
-<center><img src="plots/tukey.png" alt="Img"/></center>
+<center><img src="plots/tukey.png" alt="Img" width = "600"/></center>
 
 To read this plot you are looking to see if the confidence intervals cross over the zero line. If they cross zero this __is not__ statistically significant and if they do not this __is__ statistically significant.
 
@@ -370,7 +393,7 @@ sparrow_summary <- sparrow_long %>%
     theme(legend.position = "none"))                                     # Removing legend
 ```
 
-<center><img src="plots/barplot.png" alt="Img" width = "500"/></center>
+<center><img src="plots/barplot.png" alt="Img" width = "600"/></center>
 
 ```r
 # Improve Tukey's test result plot
@@ -403,11 +426,10 @@ __After completion this tutorial you should be able to:__
 - Visualise the data and outputs
 - Report findings
 
-__References:__
-RSPB (n.d.). www.rspb.org.uk. Available at: https://www.rspb.org.uk/birds-and-wildlife/house-sparrow. (accessed 26/11/24)
 
 <hr>
-<hr>
+
+__Reference:__ RSPB (n.d.). www.rspb.org.uk. Available at: https://www.rspb.org.uk/birds-and-wildlife/house-sparrow. (accessed 26/11/24)
 
 #### Useful links:
 - Two articles from Statology: <a href="https://www.statology.org/one-way-anova/" target="_blank">One-way ANOVA: Definition, formula and example</a> and <a href="https://www.statology.org/tukey-test-r/" target="_blank">How to perform Tukey's test in R</a>
