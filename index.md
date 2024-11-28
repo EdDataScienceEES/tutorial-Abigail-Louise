@@ -183,7 +183,18 @@ sparrow_long <- pivot_longer(sparrow, cols = c(Urban, Forest, Farmland), names_t
 
 ## 4) Data visualisation
 
-It is good practice to visualise your data before undertaking any data analysis.
+It is important to visualise your data __before__ undertaking any data analysis. 
+
+ANOVA is a parametric test which means it replies on assumptions about the parameters of the population from which the sample is derived. 
+
+These assumptions are:
+- The data are drawn from a population with a __normal distribution__
+- There is __equal variances__ (homogeneity) across groups
+- The data are measured on an __interval or ratio scale__ (continuous or numerical)
+
+First, we will check there is a normal distribution of the response variable (abundance) by plotting a __histogram__ of the frequency distribution.
+
+<mark> Please note: If your data does not have a normal distribution the data can be log-transformed or you could use a non-parametric test, such as Mann-Whitney U test or Kruskal-Wallis test. </mark>
 
 ```r
 # Visualising data with histograms to check for normal distribution for each habitat type
