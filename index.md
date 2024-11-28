@@ -220,7 +220,7 @@ First, we will check there is a normal distribution of the response variable (ab
     theme_test())                                     # Apply a clean theme
 ```
 
-<mark> __Tip:__ By putting the whole code for a plot in brackets `()` the plot will appear in your bottom right window without you having to call them! </mark>
+<mark> Tip: By putting the whole code for a plot in brackets () the plot will appear in your bottom right window without you having to call them! </mark>
 
 ```r
 # Arranging plots in a single panel
