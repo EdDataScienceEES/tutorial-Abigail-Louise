@@ -301,7 +301,7 @@ The most important value to examine is the __p-value__, which we compare to our 
 
 Our significance level for this tutorial is 0.05. __Why?__
 
-This is widely adopted standard in statistics which represents the threshold for deciding significance. The significance level is the probability of making a type I error (false positive), so at 0.05 there is a 5% risk of concluding that there is an effect/difference when there is none. 
+This is widely adopted standard in statistics which represents the threshold for deciding significance. The significance level is the probability of making a type I error (false positive), so at 0.05 there is a 5% risk of concluding that there is an effect/difference when there is none. While 0.05 is common, it’s not universally appropriate! For example, in the context of medicine, where decisions have high stakes, the threshold may be stricter, such as 0.01 or 0.001.
 
 
 __Checking assumptions:__
