@@ -411,8 +411,12 @@ sparrow_summary <- sparrow_long %>%
 
 <center><img src="plots/imp_tukey.png" alt="Img"/></center>
 
-
-How to export images?
+To save your plots as images:
+```r
+# Saving a figure
+ggsave(sparrow_tukey_plot, file = "plots/tukey_test_plot.png", # Replace with your own filepath and file name 
+       width = 12, height = 6)                                 # Specifying width and height
+```
 
 
 ---
