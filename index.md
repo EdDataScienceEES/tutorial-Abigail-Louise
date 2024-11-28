@@ -88,7 +88,7 @@ The house sparrow (*Passer domesticus*) is one of the most widespread bird speci
 
 Understanding how the house sparrow abundance varies between different habitats can provide insights into the ecological requirements and threats this species faces. This research can identify areas where the house sparrow abundance is low to inform conservation efforts.
 
-After deciding on a research question you should think about what you expect to see from your research and why which will form your __hypothesis__.
+After deciding on a research question you should think about what you expect to see from your research and why, which will form your __hypothesis__.
 
 A hypothesis is a formal, testable statement about the expected relationship between variables or conditions. It represents your initial edducated guess about the outcome of the research based on prior knowledge. 
 
