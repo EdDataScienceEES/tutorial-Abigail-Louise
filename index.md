@@ -297,7 +297,9 @@ __What each column means:__
 
 - The p-value (`Pr(>F)`) - This is the p-value associated with the F-statistic. It is a probability value of how likely it is that your data would have occurred by random chance. The smaller the p-value, the less likely the results occurred at random. You compare the p-value to your significance level and if your p-value is lower, it suggests there is an effect/difference in your data.
 
-Our significance level for this tutorial is 0.05. Why? 
+The most important value to examine is the __p-value__, which we compare to our significance level which is __0.05__. Our p-value indicates high significance, as it is much smaller than the threshold. This suggests a significant difference in abundance between the different habitats.
+
+Our significance level for this tutorial is 0.05. __Why?__
 
 This is widely adopted standard in statistics which represents the threshold for deciding significance. The significance level is the probability of making a type I error (false positive), so at 0.05 there is a 5% risk of concluding that there is an effect/difference when there is none. 
 
