@@ -86,7 +86,7 @@ Before you begin doing any statistical analysis it is important to set a __resea
 
 The house sparrow (*Passer domesticus*) is one of the most widespread bird species globally and is known for their close association with human-modified environments. Despite their adaptability, monitoring suggests a severe decline of 71% between 1977 and 2008 in the UK (RSPB, n.d.). 
 
-Understanding how the house sparrow abundance varies between different habitats can provide insights into the ecological requirements and threats this species faces. This research can identify areas where the house sparrow abundance is low to inform conservation efforts.
+Understanding how the house sparrow abundance varies between different habitats can provide insights into the ecological requirements and threats this species faces. This research can identify areas where the house sparrow abundance is low to inform conservation efforts. Let's say the habitat types you would like to compare are __urban, farmland__ and __forest__. 
 
 After deciding on a research question you should think about what you expect to see from your research and why, which will form your __hypothesis__.
 
