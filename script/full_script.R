@@ -24,8 +24,8 @@ getwd()
 # Load packages
 library(tidyverse)
 library(broom)
-library(gridExtra)
 library(grid)
+library(gridExtra)
 
 # Import data
 sparrow <- read_csv("data/house_sparrow.csv")
@@ -137,7 +137,9 @@ sparrow_summary <- sparrow_long %>%
                   colour = "black", linewidth = 0.6) +                   # Setting colour and thickness of error bars
     scale_fill_manual(values = c("gold", "springgreen3", "royalblue")) + # Setting bar colours to colourblind friendly colours
     labs(x = "\n Habitat", y = "Average Abundance \n",                   # Adding axis titles 
-         caption = "Fig. 3") +                 
+         caption = "Fig. 3 - Average abundance of house sparrows across the three habitats with error bars representing 
+         standard error. The overlap of error bars between farmland and urban suggests no significant difference 
+         between these two habitats, while the forest habitat shows a significantly lower abundance, n = 120") + # Adding caption            
     theme_test() +                                                       # Apply a clean theme
     theme(legend.position = "none"))                                     # Removing legend
 
@@ -151,7 +153,9 @@ sparrow_summary <- sparrow_long %>%
     geom_hline(yintercept = 0, linetype = "dashed", color = "blue") + # Add a reference line at 0 and highlight with blue colour
     coord_flip() +                                                    # Flip coordinates for horizontal orientation
     labs(x = "Pairwise Comparisons", y = "Mean Difference",           # Add informative axis titles
-         title = "Tukey HSD Test with 95% confidence level") +        # Add plot title
+         caption = "Fig. 4 - Pairwise comparisons of mean house sparrow abundance between habitat types, based on Tukey's Honest Significant Difference (HSD) test, with 95% family-wise
+         confidence intervals. The abundance in the forest habitat is significantly lower than in farmland and urban habitats, as the confidence intervals for these comparisons 
+         do not overlap zero. In contrast, there is no significant difference between farmland and urban habitats, as their confidence interval includes zero, n = 120") + # Adding caption  
     theme_bw(base_size = 12))                                         # Apply a clean theme
 
 
