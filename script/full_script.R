@@ -95,11 +95,10 @@ summary(sparrow_anova)
 # Normal distribution of residuals - this can be checked by plotting a histogram of the residuals and a normal Q-Q plot
 
 hist(sparrow_anova$residuals, breaks = 30)  # Plotting histogram of residuals and increasing intervals to get a better visualisation
-# The residuals do not look normally distributed
+# The residuals look normally distributed
 
 plot(sparrow_anova, which = 2) # Plotting Q-Q plot
-# There are heavy tails present which suggests the data has a skewed distribution 
-# Or the outliers do not follow a normal distribution (by looking at the histogram it appears to be the this)
+# Residuals fit along the diagonal nicely
 
 # Checking for homoscedasticity
 plot(sparrow_anova, which = 1)
