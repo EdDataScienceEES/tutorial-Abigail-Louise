@@ -158,4 +158,7 @@ sparrow_summary <- sparrow_long %>%
          do not overlap zero. In contrast, there is no significant difference between farmland and urban habitats, as their confidence interval includes zero, n = 120") + # Adding caption  
     theme_bw(base_size = 12))                                         # Apply a clean theme
 
+# Saving a figure
+ggsave(sparrow_tukey_plot, file = "plots/tukey_test_plot.png", # Replace with your own filepath and file name 
+       width = 12, height = 6)                                 # Specifying width and height
 
