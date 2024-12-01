@@ -55,7 +55,7 @@ Refer to part 1 - <a href="https://ourcodingclub.github.io/tutorials/anova/">ANO
 
 __Why should you carry out a post-hoc test?__
 
-If the overall p-value from the ANOVA is less than the significannce level you have specified then we can say at least one of the means of the groups is different from the others. However, this does not tell us which groups differ from each other. This is where a post hoc test comes in to test which groups are different from each other. 
+If the overall p-value from the ANOVA is less than the significance level you have specified then we can say at least one of the means of the groups is different from the others. However, this does not tell us which groups differ from each other. This is where a post hoc test comes in to test which groups are different from each other. 
 
 __Tukey's test:__
 
