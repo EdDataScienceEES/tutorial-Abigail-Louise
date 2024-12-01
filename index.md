@@ -16,7 +16,7 @@ __In this tutorial you will learn how to:__
 - Perform a one-way ANOVA and Tukey's test
 - Interpret the outputs from these tests
 - Recognise assumptions of these tests
-- Visualise the data and outputs
+- Visualise the data and test results
 - Report findings
 
 <mark> Please Note: This tutorial assumes a basic understanding on how to use RStudio and produce plots. </mark>
@@ -506,7 +506,7 @@ __After completion this tutorial you should be able to:__
 - Perform a one-way ANOVA and Tukey's test
 - Interpret the outputs from these tests
 - Recognise assumptions of these tests
-- Visualise the data and outputs
+- Visualise the data and test results
 - Report findings
 
 
