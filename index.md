@@ -67,7 +67,7 @@ Other strengths of Tukey's test include ease of interpretation and a good balanc
 
 __Examples of other post-hoc tests:__
 - Games-Howell test can handle unequal variances and sample sizes between groups
-- Dunn's test is a non-parametric test which can be used for data that is not normally distibuted
+- Dunn's test is a non-parametric test which can be used for data that is not normally distributed
 - Scheffé's test is more flexible and can be used for non-pairwise comparisons
 
 ---
@@ -92,13 +92,13 @@ After deciding on a research question you should think about what you expect to 
 
 A hypothesis is a formal, testable statement about the expected relationship between variables or conditions. It represents your initial educated guess about the outcome of the research based on prior knowledge. 
 
-For example you may think urban areas will have higher house sparrow abundance due to the availability of food from human activity, such as discarded scraps and bird feeders in gardens. Therefore, your hypothesis could be:
+For example, you may think urban areas will have higher house sparrow abundance due to the availability of food from human activity, such as discarded scraps and bird feeders in gardens. Therefore, your hypothesis could be:
 
 <a name="hypotheses"></a>
 
 #### There will be a higher abundance of the house sparrow (*Passer domesticus*) in urban habitats compared to farmland and forests.
 
-You can make serveral hypotheses, as you may also want make a distinction between the farmland and forests habitat. You may assume house sparrows would prefer farmland over forests due to the their dietary preference of seeds and grains, which are more abundant in agricultural areas. There may also be less competition for resources in farmland compared to forests, which have a greater number of species using the same resources. Therefore, a second hypothesis could be:
+You can make several hypotheses, as you may also want to make a distinction between the farmland and forests habitat. You may assume house sparrows would prefer farmland over forests due to their dietary preference of seeds and grains, which are more abundant in agricultural areas. There may also be less competition for resources in farmland compared to forests, which have a greater number of species using the same resources. Therefore, a second hypothesis could be:
 
 #### There will be a higher abundance of house sparrow (*Passer domesticus*) in farmland habitats compared to forests.
 
