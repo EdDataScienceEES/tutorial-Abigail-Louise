@@ -171,7 +171,7 @@ head(sparrow)
 view(sparrow)
 ```
 
-R requires data to be in long format for data analysis, where the dataset is arranged with each row representing an oberservation and each column representing a variable. We can do this using the `pivot_longer()` function, where `sparrow` refers to the data frame; `cols = c(Urban, Forest, Farmland)` refers to the columns we want to gather into a single column; `names_to = "Habitat"` refers to the name of the new column we are creating; and `values_to = "Abundance"` refers to the name of next new column which stores the values of the new gathered column.
+R requires data to be in long format for data analysis, where the dataset is arranged with each row representing an observation and each column representing a variable. We can do this using the `pivot_longer()` function, where `sparrow` refers to the data frame; `cols = c(Urban, Forest, Farmland)` refers to the columns we want to gather into a single column; `names_to = "Habitat"` refers to the name of the new column we are creating; and `values_to = "Abundance"` refers to the name of next new column which stores the values of the new gathered column.
 
 ```r
 # Convert data frame to long form
@@ -185,7 +185,7 @@ sparrow_long <- pivot_longer(sparrow, cols = c(Urban, Forest, Farmland), names_t
 
 It is important to visualise your data __before__ undertaking any data analysis. 
 
-ANOVA is a parametric test which means it replies on assumptions about the parameters of the population from which the sample is derived. An important assumption is that the data are drawn from a population with a __normal distribution__.
+ANOVA is a parametric test which means it relies on assumptions about the parameters of the population from which the sample is derived. An important assumption is that the data are drawn from a population with a __normal distribution__.
 
 We will check there is a normal distribution of the response variable (abundance) by plotting a __histogram__ of the frequency distribution.
 
@@ -252,7 +252,7 @@ Let's also visualise our data with a box plot to look at the variation across ou
 
 <mark> Tip: Remove legends if they are unnecessary! </mark>
 
-When interpretating a boxplot you are looking to see if the boxes __overlap__ as you probably have a significant difference between these groups if they do. This is due to the box encompassing half of each groups values! Looking at our boxplot, the urban and farmland boxes overlap which could mean there is no significant difference between them. The forest box does not overlap with either of the other habitats which could mean a significant difference. However, you must confirm this by doing __statistical analysis!__
+When interpretating a boxplot you are looking to see if the boxes __overlap__ as you probably have a significant difference between these groups if they do. This is due to the box encompassing half of each group's values! Looking at our boxplot, the urban and farmland boxes overlap which could mean there is no significant difference between them. The forest box does not overlap with either of the other habitats which could mean a significant difference. However, you must confirm this by doing __statistical analysis!__
 
 ---
 
@@ -296,7 +296,7 @@ The most important value to examine is the __p-value__, which we compare to our 
 
 Our significance level for this tutorial is 0.05. __Why?__
 
-This is widely adopted standard in statistics which represents the threshold for deciding significance. The significance level is the probability of making a type I error (false positive), so at 0.05 there is a 5% risk of concluding that there is an effect/difference when there is none. While 0.05 is common, it’s not universally appropriate! For example, in the context of medicine, where decisions have high stakes the threshold may be stricter, such as 0.01 or 0.001.
+This is widely adopted standard in statistics which represents the threshold for deciding significance. The significance level is the probability of making a type I error (false positive), so at 0.05 there is a 5% risk of concluding that there is an effect/difference when there is none. While 0.05 is common, it’s not universally appropriate! For example in the context of medicine, where decisions have high stakes, the threshold may be stricter, such as 0.01 or 0.001.
 
 We now need to check our model assumptions are met to trust the ANOVA output.
 
@@ -345,9 +345,9 @@ plot(sparrow_anova, which = 1)
 
 <center><img src="plots/res_vs_fix.png" alt="Img"/></center>
 
-The red line is straight and centered across 0! Great, we have met all the assumptions!
+The red line is straight and centred across 0! Great, we have met all the assumptions!
 
-Based on these results, we might initially think our <a href="hypotheses">hypotheses</a> are supported. However, ANOVA only tells us that at least __one__ group differs from another; it doesn’t specify which groups are different or whether all groups differ. This is were the post-hoc test comes in to give us a better insight!
+Based on these results, we might initially think our <a href="hypotheses">hypotheses</a> are supported. However, ANOVA only tells us that at least __one__ group differs from another; it doesn’t specify which groups are different or whether all groups differ. This is where the post-hoc test comes in to give us a better insight!
 
 ---
 
@@ -381,7 +381,7 @@ __What each column means:__
 Output in console:
 <center><img src="outputs/tidy_tukey_summary.png" alt="Img" width = "700"/></center>
 
-We can see from the p-values (if our significance level is 0.05), the forest and farmland habitats show a significant differences in abundance as the p-value is less than 0.05, and so do the urban and forest habitats. However, the urban and farmland habitats have a p-value more than 0.05 so they do not appear to be significantly different. 
+We can see from the p-values (if our significance level is 0.05), the forest and farmland habitats show a significant difference in abundance as the p-value is less than 0.05, and so do the urban and forest habitats. However, the urban and farmland habitats have a p-value more than 0.05 so they do not appear to be significantly different. 
 
 If you find the tables quite confusing, another way to interpret the results is by plotting them:
 ```r
@@ -427,9 +427,9 @@ There was no statistically significant difference between farmland and urban (p=
 
 __Visually:__
 
-Our results can be displayed as a boxplot (as we did earlier), a barplot with standard error and a Tukey's multiple comparison plot.
+Our results can be displayed as a boxplot (as we did earlier), a bar plot with standard error and a Tukey's multiple comparison plot.
 
-For the barplot, we first need to calculate the standard error for each group through creating a summary table of statistics:
+For the bar plot, we first need to calculate the standard error for each group through creating a summary table of statistics:
 
 ```r
 # Creating summary table of key statistics 
@@ -440,7 +440,7 @@ sparrow_summary <- sparrow_long %>%
             SD = sd(Abundance)) %>%              # Standard deviation of abundance in each habitat
   mutate(SE = SD/sqrt(n))
 ```
-Then plot the statistics summary table you created as a barplot:
+Then plot the statistics summary table you created as a bar plot:
 
 ```r
 # Creating bar plot of sparrow summary
