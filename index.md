@@ -51,7 +51,7 @@ __ANOVA:__
 
 An ANOVA which stands for "ANalysis Of VAriance" is a statistical method used to compare the means across three or more independent groups. It considers the variability both within each group and between them to determine statistical significance.
 
-Refer to part 1 - <a href="https://ourcodingclub.github.io/tutorials/anova/">ANOVA from A to (XY)Z</a> for a more in depth explaination of ANOVA and choosing the appropriate test for your data.
+Refer to part 1 - <a href="https://ourcodingclub.github.io/tutorials/anova/">ANOVA from A to (XY)Z</a> for a more in depth explaination of ANOVA or if you are unsure you have chosen the appropriate test for your data.
 
 __Why should you carry out a post-hoc test?__
 
