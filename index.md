@@ -419,7 +419,7 @@ __For our results this would be:__
 
 "A one-way ANOVA was conducted to compare the effect of habitat type on house-sparrow (*Passer domesticus*) abundance. The ANOVA results indicated that there was a statistically significant difference in abundance among at least two groups (F(2,117) = 154.3, p = <2e-16).
 
-Tukey’s HSD post-hoc test for multiple comparisons found that the mean value of abundance was significantly different between forest and urban (p = 0, 95% C.I. = 19.4, 26.3), between forest and farmland (p = 0, 95% C.I. = -24.9, -17.9).
+Tukey’s HSD post-hoc test for multiple comparisons found that the mean value of abundance was significantly different between forest and urban (p = 0, 95% C.I. = 19.4, 26.3), and between forest and farmland (p = 0, 95% C.I. = -24.9, -17.9).
 
 There was no statistically significant difference between farmland and urban (p= 0.59)."
 
