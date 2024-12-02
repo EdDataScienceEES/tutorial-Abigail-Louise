@@ -500,7 +500,7 @@ ggsave(sparrow_tukey_plot, file = "plots/tukey_test_plot.png", # Replace with yo
 
 __Congratulations__, for making it through this tutorial! You should now know how to further analyse your ANOVA results by conducting Tukey's HSD post-hoc test.
 
-__After completion this tutorial you should be able to:__
+__After completion of this tutorial you should be able to:__
 - Load and prepare data for analysis in RStudio
 - Understand when to use/the purpose of a one-way ANOVA and Tukey's test
 - Perform a one-way ANOVA and Tukey's test
